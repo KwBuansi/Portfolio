@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kwasi Buansi Portfolio | Projects</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Raleway", sans-serif;
+      }
+
+      body {
+        background: #f5f7fa;
+        color: #333;
+      }
+
+      /* Tech-themed multicolor header */
+      .tech-header {
+        height: 420px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tech-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0d47a1, #8e24aa, #e53935, #fb8c00, #43a047, #1e88e5);
+        background-size: 400% 400%;
+        animation: gradientShift 12s ease infinite;
+      }
+
+      .tech-bg::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://i.imgur.com/2u7i7Ih.png');
+        opacity: 0.18;
+        mix-blend-mode: overlay;
+      }
+
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .overlay-content {
+        color: white;
+        text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+      }
+
+      nav a {
+        margin: 0 5px;
+        border-radius: 6px;
+      }
+
+      /* Fade into body */
+      .header-fade {
+        height: 120px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0), #f5f7fa);
+        margin-top: -60px;
+      }
+
+      /* Project cards */
+      .w3-container.w3-indigo {
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+      img {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="tech-header w3-display-container" id="home">
+      <div class="tech-bg"></div>
+
+      <div class="w3-display-middle w3-center overlay-content">
+        <h1 class="w3-xxxlarge"><b>Kwasi Buansi</b></h1>
+        <span class="w3-large">Computer Science Student at Davidson College</span>
+        <nav class="w3-margin-top">
+          <a href="projects.html" class="w3-button w3-indigo w3-large">Projects</a>
+          <a href="index.html" class="w3-button w3-indigo w3-large">Home</a>
+        </nav>
+      </div>
+    </header>
+        <section class="w3-container w3-margin w3-xlarge">
+            <div class="w3-margin">
+                <div class="w3-margin">
+                    <div class="w3-margin">
+                        <div class="w3-margin">
+                            <div class="w3-margin">
+                                <div class="w3-margin">
+                                    <div class="w3-margin">
+                                        <div class="w3-margin">
+                                            <div class="w3-margin">
+                                                <div class="w3-margin">
+                                                    <div class="w3-margin">
+                                                        <div class="w3-margin">
+                                                            <div class="w3-margin">
+                                                                <div class="w3-margin">
+                                                                    <h2>
+                                                                        <b>
+                                                                            Design Manifesto
+                                                                        </b>
+                                                                    </h2>
+                                                                    <div class="w3-center">
+                                                                        <img src="Images/designthink.png" width="700" height="700">
+                                                                        <div class="w3-large">The design process. From <a href="https://www.nngroup.com/articles/design-thinking/">nngroup.com</a>.</div>
+                                                                    </div>
+                                                                    <p>
+                                                                        Often, products in the tech industry fail 
+                                                                        because companies don't adequately understand 
+                                                                        what their users want. Even when users are 
+                                                                        considered, without a proper understanding of 
+                                                                        human-centered design, teams risk building 
+                                                                        solely what users ask for, which is often not 
+                                                                        what they truly want. Starting a project can 
+                                                                        be extremely expensive, so an understanding 
+                                                                        of the design process, which entails adequate 
+                                                                        preparation, is a mandatory skill for software 
+                                                                        developers. My Human Computer Interaction 
+                                                                        class provided a helpful starting point for 
+                                                                        learning and applying crucial design and 
+                                                                        needfinding skills, including interviewing, 
+                                                                        testing, and communication. I found these 
+                                                                        five aspects of the design process to be the 
+                                                                        most vital after completing five design sprints:
+                                                                        <ul>
+                                                                            <li>
+                                                                                Establish a plan before building
+                                                                            </li>
+                                                                            <li>
+                                                                                Constrain adequately, but be ambitious.
+                                                                            </li>
+                                                                            <li>
+                                                                                Be ready to solve the same problem multiple times.
+                                                                            </li>
+                                                                            <li>
+                                                                                Always have a target audience in mind and consider as many people within it as possible.
+                                                                            </li>
+                                                                            <li>
+                                                                                Be prepared to learn something new.
+                                                                            </li>
+                                                                        </ul>
+                                                                    </p>
+                                                                    <p>
+                                                                        <b>1. Establish a plan before building</b>
+                                                                        <br>
+                                                                        To avoid building a product that fails 
+                                                                        to understand, teams must thoroughly conduct 
+                                                                        needfinding before prototyping, which can 
+                                                                        take various forms depending on the modality. 
+                                                                        For example, when my team and I started 
+                                                                        developing a fitness-tracking app, it made the 
+                                                                        most sense for us to conduct interviews to 
+                                                                        understand what users required of our app, 
+                                                                        given that the primary focus of our project 
+                                                                        was to identify and solve issues that primarily 
+                                                                        impact college students. Conversely, it made 
+                                                                        more sense for us to conduct usability testing 
+                                                                        when developing our kiosk, as we were focusing 
+                                                                        on improving our website's user experience and 
+                                                                        already had a base to build on. This is to say 
+                                                                        nothing of the prior research and persona 
+                                                                        creation that are crucial to needfinding.
+                                                                        Once the team adequately understands the 
+                                                                        problem at hand, prototyping may begin, but at 
+                                                                        a low-fidelity level. Before jumping into an 
+                                                                        expensive prototype that may resemble the final 
+                                                                        product, paper sketches and Figma prototypes 
+                                                                        are highly valuable. One recurring theme I 
+                                                                        noticed throughout my semester in HCI is that 
+                                                                        it is often difficult to communicate ideas to 
+                                                                        group members solely through words. When each 
+                                                                        team member designs their own low-fidelity 
+                                                                        concept, and the team converges on one specific 
+                                                                        idea, there is little room for misunderstandings. 
+                                                                        Understanding that both your team members and 
+                                                                        customers are in the planning phase is crucial. 
+                                                                        Truly, this is where the "human" aspect of 
+                                                                        human-centered design comes in. 
+                                                                    </p>
+                                                                    <div class="w3-center">
+                                                                        <img src="Images/sketches.png">
+                                                                        <div class="w3-large">Low-fidelity sketches of the Knotty & Board Prototype Homepage</div>
+                                                                    </div>
+                                                                    <p>
+                                                                        <b>2. Constrain adequately, but be ambitious.</b>
+                                                                        <br>
+                                                                        Once the team has converged on a single 
+                                                                        low-fidelity prototype, it is still possible 
+                                                                        to remain ambitious and implement new features 
+                                                                        to a higher-fidelity prototype in the future. 
+                                                                        Adding impromptu features may be risky, but it 
+                                                                        may pay off in the long term as long as all 
+                                                                        team members are aware of said changes, and 
+                                                                        they remain relevant and reasonable given the 
+                                                                        project's scope. This can be easy or difficult, 
+                                                                        depending on the project's modality. For example, 
+                                                                        during the third design, since I was primarily 
+                                                                        in charge of our game's code, I was able to 
+                                                                        easily add impromptu features such as collision, 
+                                                                        death screens, and sound effects. In this context, 
+                                                                        communication was less relevant than, for example, 
+                                                                        in the final design sprint, where we collectively 
+                                                                        worked on creating our physical prototype. 
+                                                                        Additionally, in a physical context, it is difficult 
+                                                                        to add or remove features without damaging the 
+                                                                        project's structural integrity, so we largely stuck 
+                                                                        to adding easy-to-implement features to our 
+                                                                        preexisting design rather than creating brand-new 
+                                                                        designs, given our limited time.
+                                                                    </p>
+                                                                    <div class="w3-center">
+                                                                        <img src="Images/ds4.png">
+                                                                        <div class="w3-large">Final Prototype of the Knotty & Board Kiosk</div>
+                                                                    </div>
+                                                                    <p>
+                                                                        <b>3. Be ready to solve the same problem multiple times.</b>
+                                                                        <br>
+                                                                        The fourth design sprint required us to modify the 
+                                                                        final product from our first sprint, our revamped 
+                                                                        designs for the Knotty & Board website. We ultimately 
+                                                                        agreed to develop a kiosk based on our previous 
+                                                                        product to improve the Knotty & Board shopping 
+                                                                        experience, primarily for elderly users. Despite us 
+                                                                        already having a solid foundation to work off of, 
+                                                                        being the web pages we designed and in-class feedback 
+                                                                        for those pages, the fourth design sprint proved to 
+                                                                        be the most challenging. This was primarily because I 
+                                                                        was blindsided by the fact that we were required to work 
+                                                                        on a project we had already completed. I should not have 
+                                                                        been, given that iteration is a crucial aspect of the 
+                                                                        design process.
+                                                                    </p>
+                                                                    <p>
+                                                                        <b>4. Always have a target audience in mind and consider as many people within it as possible.</b>
+                                                                        <br>
+                                                                        Rather than a design sprint, a homework assignment 
+                                                                        illustrated this concept the best throughout the semester. 
+                                                                        This homework required us to navigate through various sites 
+                                                                        without using our keyboard. While likely the simplest, this 
+                                                                        assignment became the most frustrating throughout the semester. 
+                                                                        Keyboard use was something I had taken for granted-without 
+                                                                        it, sites took exponentially longer to navigate through, and 
+                                                                        specific sites without crucial accessibility features became 
+                                                                        unavigable. The burden poor accessibility has on 
+                                                                        differently-abled individuals is not merely inconvenient- it 
+                                                                        harms productivity (the restriction made it take longer to 
+                                                                        complete assignments for other classes as well). All this to 
+                                                                        say that accessibility is essential. A website primarily 
+                                                                        intended for older people that does not consider those with 
+                                                                        colorblindness, low vision, or low hand mobility is a bad 
+                                                                        website. After this experience, I found myself subconsciously 
+                                                                        checking the accessibility practices of other websites I 
+                                                                        browse throughout the internet.
+                                                                    </p>
+                                                                    <div class="w3-center">
+                                                                        <img src="Images/accessibility.png">
+                                                                        <div class="w3-large">Web accessibility considerations, among others. From <a href="https://www.108ideaspace.com/boost-inclusivity-with-an-accessible-website/">108ideaspace.com</a>.</div>
+                                                                    </div>
+                                                                    <p>
+                                                                        <b>5. Be prepared to learn something new.</b>
+                                                                        <br>
+                                                                        Just as I did not know how to implement best accessibility
+                                                                        practices, nor did I know anything about A-Frame or d3.js before 
+                                                                        my HCI class, software developers should be ready to learn new 
+                                                                        skills when working on projects. These skills are not all 
+                                                                        necessarily coding languages. As previously established, 
+                                                                        needfinding is crucial to the design process. This entails finding 
+                                                                        interviewees and skillfully soliciting information from them. While 
+                                                                        simple at first glance, interviewing is a skill worth an entire 
+                                                                        course in and of itself, to say nothing of actually discovering 
+                                                                        interviewees suitable for the project's target audience. Both this 
+                                                                        and working in teams require people skills that may go under the 
+                                                                        radar of software developers. These people skills should bleed into 
+                                                                        the actual design of products, as Don Norman highlights in his book, 
+                                                                        <a href="https://dl.icdst.org/pdfs/files4/4bb8d08a9b309df7d86e62ec4056ceef.pdf">The Design of Everyday Things</a>. Using his philosophy, 
+                                                                        misunderstandings about how to use a product are the developer's 
+                                                                        fault. As such, designers must strive to make their products as clear 
+                                                                        as possible, particularly through the use of affordances. 
+                                                                    </p>
+                                                                    <p>
+                                                                        By learning and practicing these principles, I learned 
+                                                                        a consistent design process that proved helpful throughout 
+                                                                        the semester: gathering and soliciting information, 
+                                                                        prototyping, user testing, and ultimately iterating. 
+                                                                        However, having a genuine interest in the problem at hand 
+                                                                        and striving to make valuable contributions to the group 
+                                                                        effort are the most helpful aspects in the process. With 
+                                                                        enough enthusiasm, team members will naturally be willing 
+                                                                        to do what it takes to create strong, endearing products 
+                                                                        and be prepared to iterate as often as necessary.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
