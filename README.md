@@ -1,1 +1,1 @@
-This repository contains the code for my portfolio..
+This repository contains the code for my portfolio.
