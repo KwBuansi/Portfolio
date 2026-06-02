@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Systems and infrastructure projects by Kwasi Buansi — C, Unix shells, and low-level programming."
+    />
+    <title>Kwasi Buansi Portfolio | Systems &amp; Infrastructure</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/portfolio.css" />
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Raleway", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="tech-header w3-display-container" id="home">
+      <div class="tech-bg"></div>
+      <div class="w3-display-middle w3-center overlay-content">
+        <h1 class="w3-xxxlarge"><b>Kwasi Buansi</b></h1>
+        <span class="hero-subtitle">Systems &amp; Infrastructure</span>
+      </div>
+    </header>
+
+    <div class="header-fade"></div>
+
+    <nav class="site-nav-wrap" aria-label="Main navigation">
+      <div class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="hci.html">HCI &amp; Data Viz</a>
+        <a href="systems.html" class="active">Systems &amp; Infrastructure</a>
+        <a href="databases.html">Databases &amp; Backend</a>
+        <a href="algorithms.html">Algorithms &amp; Java</a>
+        <a href="manifesto.html">Design Manifesto</a>
+      </div>
+    </nav>
+
+    <section class="gallery-section">
+      <div class="gallery-header">
+        <h2><b>Systems Gallery</b></h2>
+        <p>
+          Low-level systems programming in C — from custom Unix shells to binary
+          file recovery and digital logic CPU design. Coursework
+          from CSC 250: Computer Organization.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card project-card--text">
+          <a
+            class="card-link"
+            href="https://github.com/KwBuansi/Old-Projects/tree/main/systems/unix-shell"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-card-body">
+              <b>Unix Shell</b>
+              <p>
+                A from-scratch command-line shell supporting pipelines, I/O
+                redirection, background jobs, command history, and signal
+                handling — built with fork, exec, and wait system calls.
+              </p>
+              <div class="tech-tags">
+                <span>C</span>
+                <span>POSIX</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card project-card--text">
+          <a
+            class="card-link"
+            href="https://github.com/KwBuansi/Old-Projects/tree/main/systems/schelling"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-card-body">
+              <b>Schelling Segregation Model</b>
+              <p>
+                Simulates Thomas Schelling's agent-based segregation model on a
+                2D grid. Agents relocate until neighborhood satisfaction
+                thresholds are met, visualizing emergent spatial patterns.
+              </p>
+              <div class="tech-tags">
+                <span>C</span>
+                <span>Simulation</span>
+                <span>File I/O</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card project-card--text">
+          <a
+            class="card-link"
+            href="https://github.com/KwBuansi/Old-Projects/tree/main/systems/jpeg-card-recovery"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-card-body">
+              <b>JPEG Card Recovery</b>
+              <p>
+                Recovers deleted JPEG images from a raw memory dump by scanning
+                for magic byte sequences (0xFFD8FFE0 / 0xFFD8FFE1) and
+                reconstructing files from binary streams.
+              </p>
+              <div class="tech-tags">
+                <span>C</span>
+                <span>Binary I/O</span>
+                <span>Forensics</span>
+              </div>
+            </div>
+          </a>
+        </article>
+
+        <article class="project-card project-card--text">
+          <a
+            class="card-link"
+            href="https://github.com/KwBuansi/Old-Projects/tree/main/systems/cpu-assembler"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="project-card-body">
+              <b>Custom CPU &amp; Assembler</b>
+              <p>
+                Designed a complete CPU datapath in Logisim Evolution with a
+                control-unit FSM, then wrote a Python assembler to translate
+                assembly instructions into machine code for the simulated
+                processor.
+              </p>
+              <div class="tech-tags">
+                <span>Logisim</span>
+                <span>Assembly</span>
+                <span>Python</span>
+              </div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="contact-links">
+        <a href="https://github.com/KwBuansi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/kwasi-buansi-bb21a5236" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:kwasibuansi@gmail.com">Email</a>
+      </div>
+      <p>&copy; 2026 Kwasi Buansi · Davidson College</p>
+    </footer>
+  </body>
+</html>

@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kwasi Buansi Portfolio | Home Page</title>
+    <meta
+      name="description"
+      content="Kwasi Buansi — Computer Science student at Davidson College. Portfolio of systems programming, databases, algorithms, HCI, and data visualization projects."
+    />
+    <title>Kwasi Buansi Portfolio | Home</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/portfolio.css" />
     <style>
       body,
       h1,
@@ -21,80 +26,7 @@
       h6 {
         font-family: "Raleway", sans-serif;
       }
-
-      body {
-        background: #f5f7fa;
-        color: #333;
-      }
-
-      header .overlay-content {
-        color: white;
-        text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
-      }
-
-      nav a {
-        margin: 0 5px;
-        border-radius: 6px;
-      }
-
-      /* About Section Styling */
-      #about-section {
-        background: white;
-        padding: 50px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        max-width: 900px;
-        margin: 40px auto;
-      }
-
-      #about-section h2 {
-        border-left: 8px solid #3f51b5;
-        padding-left: 15px;
-      }
-      /* Tech-themed header */
-      .tech-header {
-        height: 420px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .tech-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, #0d47a1, #8e24aa, #e53935, #fb8c00, #43a047, #1e88e5);
-        background-size: 300% 300%;
-        animation: gradientShift 10s ease infinite;
-      }
-
-      /* Subtle floating circuitry pattern */
-      .tech-bg::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.18;
-        mix-blend-mode: overlay;
-      }
-
-      @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-
-      /* Soft fade from header into page */
-      .header-fade {
-        height: 120px;
-        background: linear-gradient(to bottom, rgba(0,0,0,0), #f5f7fa);
-        margin-top: -60px;
-      }
-
-</style>
+    </style>
   </head>
 
   <body>
@@ -102,32 +34,97 @@
       <div class="tech-bg"></div>
       <div class="w3-display-middle w3-center overlay-content">
         <h1 class="w3-xxxlarge"><b>Kwasi Buansi</b></h1>
-        <span class="w3-large">Computer Science Student at Davidson College</span>
-        <nav class="w3-margin-top">
-          <a href="manifesto.html" class="w3-button w3-indigo w3-large">Design Manifesto</a>
-          <a href="hci.html" class="w3-button w3-indigo w3-large">HCI Projects</a>
-          <a href="dataviz.html" class="w3-button w3-indigo w3-large">Data Visualizations</a>
-        </nav>
+        <span class="hero-subtitle">Computer Science · Davidson College</span>
       </div>
     </header>
 
-    <!-- Gradient Fade Into Page -->
     <div class="header-fade"></div>
 
-    <!-- About Section -->
+    <nav class="site-nav-wrap" aria-label="Main navigation">
+      <div class="site-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="hci.html">HCI &amp; Data Viz</a>
+        <a href="systems.html">Systems &amp; Infrastructure</a>
+        <a href="databases.html">Databases &amp; Backend</a>
+        <a href="algorithms.html">Algorithms &amp; Java</a>
+        <a href="manifesto.html">Design Manifesto</a>
+      </div>
+    </nav>
+
     <section id="about-section" class="w3-container">
       <h2 class="w3-xxxlarge"><b>About Me</b></h2>
-      <p class="w3-xlarge">
-        My name is Kwasi Buansi. I am currently a junior at Davidson College, majoring
-        in Computer Science and minoring in Data Science. The bulk of my coding
-        experience is in backend development, specifically with Python and Java.
-        Recently, I've gained a lot of experience in front-end development,
-        particularly in JavaScript, HTML, and CSS, through various school and personal
-        projects. I also have experience with JS libraries and frameworks, including
-        d3.js, React.js, and A-Frame. Additionally, I've worked with databases and
-        statistical languages such as Supabase and R. This site contains some of the
-        projects I've worked on.
+      <p class="w3-large">
+        My name is Kwasi Buansi. I am a Computer Science major and Data Science
+        minor at Davidson College. The bulk of my coding experience is in backend
+        development with Python and Java, complemented by front-end work in
+        JavaScript, HTML, and CSS across school and personal projects. I have
+        built systems in C at the OS level, designed relational databases with
+        SQL, and created interactive experiences with d3.js, React, and A-Frame.
+        This portfolio showcases the projects I am most proud of.
       </p>
+
+      <div class="skills-grid" aria-label="Technical skills">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">Java</span>
+        <span class="skill-pill">C</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">Node.js</span>
+        <span class="skill-pill">d3.js</span>
+        <span class="skill-pill">React</span>
+        <span class="skill-pill">A-Frame</span>
+        <span class="skill-pill">PostgreSQL</span>
+        <span class="skill-pill">Git</span>
+      </div>
+
+      <div class="contact-bar">
+        <a href="https://github.com/KwBuansi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/kwasi-buansi-bb21a5236" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:kwasibuansi@gmail.com">kwasibuansi@gmail.com</a>
+      </div>
     </section>
+
+    <section class="home-panel w3-container">
+      <h2 class="w3-xlarge"><b>Project Collections</b></h2>
+      <p class="w3-large" style="color: var(--text-muted); margin-top: 0">
+        Explore work organized by domain — from low-level systems code to
+        user-centered design and data storytelling.
+      </p>
+      <div class="featured-grid">
+        <a class="featured-link" href="hci.html">
+          HCI &amp; Data Visualization
+          <small>Design sprints, d3.js charts, usability testing, VR</small>
+        </a>
+        <a class="featured-link" href="systems.html">
+          Systems &amp; Infrastructure
+          <small>C shells, binary recovery, CPU design</small>
+        </a>
+        <a class="featured-link" href="databases.html">
+          Databases &amp; Backend
+          <small>SQL schemas, Python ETL, Node.js web apps</small>
+        </a>
+        <a class="featured-link" href="algorithms.html">
+          Algorithms &amp; Java
+          <small>Graphs, heuristics, audio synthesis, A-Frame</small>
+        </a>
+        <a class="featured-link" href="https://github.com/KwBuansi/Old-Projects" target="_blank" rel="noopener noreferrer">
+          Old Projects (GitHub)
+          <small>Archived coursework — systems, Java, databases, data viz</small>
+        </a>
+        <a class="featured-link" href="manifesto.html">
+          Design Manifesto
+          <small>Design philosophy and process</small>
+        </a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="contact-links">
+        <a href="https://github.com/KwBuansi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/kwasi-buansi-bb21a5236" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:kwasibuansi@gmail.com">Email</a>
+      </div>
+      <p>&copy; 2026 Kwasi Buansi · Davidson College</p>
+    </footer>
   </body>
 </html>
