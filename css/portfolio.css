@@ -331,6 +331,135 @@ body {
   font-size: 0.82rem;
 }
 
+.section-lead {
+  color: var(--text-muted);
+  margin-top: 0;
+  line-height: 1.6;
+}
+
+.section-footer-link {
+  margin: 1.25rem 0 0;
+  font-size: 0.95rem;
+}
+
+.section-footer-link a {
+  font-weight: 600;
+  color: var(--indigo);
+  text-decoration: none;
+}
+
+.section-footer-link a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Personal projects spotlight (home) ---- */
+.home-panel--spotlight {
+  max-width: 960px;
+  border: 2px solid rgba(63, 81, 181, 0.22);
+  box-shadow: 0 8px 28px rgba(63, 81, 181, 0.16);
+}
+
+.home-panel--school {
+  max-width: 960px;
+  opacity: 0.98;
+}
+
+.personal-spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.personal-spotlight-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem 1.4rem 1.25rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(145deg, var(--indigo-dark), var(--indigo));
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.personal-spotlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.personal-spotlight-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+  margin-bottom: 0.35rem;
+}
+
+.personal-spotlight-card strong {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.personal-spotlight-card p {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  opacity: 0.95;
+  flex: 1;
+}
+
+.personal-spotlight-cta {
+  font-size: 0.88rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.school-grid .featured-link {
+  font-size: 0.95rem;
+}
+
+.school-index {
+  max-width: 960px;
+}
+
+/* ---- Personal project cards (dedicated page) ---- */
+.personal-project-grid {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.project-card--personal .project-card-body {
+  padding: 1.35rem 1.25rem 1.3rem;
+}
+
+.project-card--personal .project-card-body b {
+  font-size: 1.15rem;
+}
+
+/* ---- Breadcrumb (school sub-pages) ---- */
+.breadcrumb {
+  max-width: 1200px;
+  margin: 0.85rem auto 0;
+  padding: 0 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb a {
+  color: var(--indigo);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span[aria-hidden="true"] {
+  margin: 0 0.35rem;
+}
+
 /* ---- Contact links ---- */
 .contact-bar {
   display: flex;
@@ -524,5 +653,9 @@ img.w3-hover-opacity {
   .manifesto-content {
     margin: 1.25rem 1rem;
     padding: 1.25rem;
+  }
+
+  .personal-spotlight-grid {
+    grid-template-columns: 1fr;
   }
 }

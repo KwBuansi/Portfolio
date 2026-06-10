@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Kwasi Buansi — Computer Science student at Davidson College. Portfolio of systems programming, databases, algorithms, HCI, and data visualization projects."
+      content="Kwasi Buansi — Computer Science student at Davidson College. Personal projects in full-stack web and Android, plus school coursework in systems, databases, and HCI."
     />
     <title>Kwasi Buansi Portfolio | Home</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
@@ -43,13 +43,52 @@
     <nav class="site-nav-wrap" aria-label="Main navigation">
       <div class="site-nav">
         <a href="index.html" class="active">Home</a>
-        <a href="hci.html">HCI &amp; Data Viz</a>
-        <a href="systems.html">Systems &amp; Infrastructure</a>
-        <a href="databases.html">Databases &amp; Backend</a>
-        <a href="algorithms.html">Algorithms &amp; Java</a>
+        <a href="personal.html">Personal Projects</a>
+        <a href="school.html">School Projects</a>
         <a href="manifesto.html">Design Manifesto</a>
       </div>
     </nav>
+
+    <section class="home-panel home-panel--spotlight w3-container" id="personal-projects">
+      <h2 class="w3-xlarge"><b>Personal Projects</b></h2>
+      <p class="section-lead">
+        Independent work I built outside of coursework — start here for my
+        most recent full-stack and mobile applications.
+      </p>
+      <div class="personal-spotlight-grid">
+        <a
+          class="personal-spotlight-card"
+          href="https://github.com/KwBuansi/Gallery"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="personal-spotlight-label">Full-stack web</span>
+          <strong>Gallery</strong>
+          <p>
+            User accounts, image uploads, AI-generated image detection via
+            Illuminarty, and Supabase for auth and storage.
+          </p>
+          <span class="personal-spotlight-cta">View on GitHub →</span>
+        </a>
+        <a
+          class="personal-spotlight-card"
+          href="https://github.com/KwBuansi/TipCalc"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="personal-spotlight-label">Android · Kotlin</span>
+          <strong>TipCalc</strong>
+          <p>
+            Restaurant tip calculator with bill splitting and total rounding —
+            practical mobile UX for everyday use.
+          </p>
+          <span class="personal-spotlight-cta">View on GitHub →</span>
+        </a>
+      </div>
+      <p class="section-footer-link">
+        <a href="personal.html">See personal projects page →</a>
+      </p>
+    </section>
 
     <section id="about-section" class="w3-container">
       <h2 class="w3-xxxlarge"><b>About Me</b></h2>
@@ -57,10 +96,9 @@
         My name is Kwasi Buansi. I am a Computer Science major and Data Science
         minor at Davidson College. The bulk of my coding experience is in backend
         development with Python and Java, complemented by front-end work in
-        JavaScript, HTML, and CSS across school and personal projects. I have
-        built systems in C at the OS level, designed relational databases with
-        SQL, and created interactive experiences with d3.js, React, and A-Frame.
-        This portfolio showcases the projects I am most proud of.
+        JavaScript, HTML, and CSS. I have built systems in C at the OS level,
+        designed relational databases with SQL, and created interactive
+        experiences with d3.js, React, and A-Frame.
       </p>
 
       <div class="skills-grid" aria-label="Technical skills">
@@ -69,6 +107,7 @@
         <span class="skill-pill">C</span>
         <span class="skill-pill">SQL</span>
         <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">Kotlin</span>
         <span class="skill-pill">Node.js</span>
         <span class="skill-pill">d3.js</span>
         <span class="skill-pill">React</span>
@@ -84,13 +123,13 @@
       </div>
     </section>
 
-    <section class="home-panel w3-container">
-      <h2 class="w3-xlarge"><b>Project Collections</b></h2>
-      <p class="w3-large" style="color: var(--text-muted); margin-top: 0">
-        Explore work organized by domain — from low-level systems code to
-        user-centered design and data storytelling.
+    <section class="home-panel home-panel--school w3-container" id="school-projects">
+      <h2 class="w3-xlarge"><b>School Projects</b></h2>
+      <p class="section-lead">
+        Coursework from Davidson College, organized by domain — systems
+        programming, databases, algorithms, and HCI.
       </p>
-      <div class="featured-grid">
+      <div class="featured-grid school-grid">
         <a class="featured-link" href="hci.html">
           HCI &amp; Data Visualization
           <small>Design sprints, d3.js charts, usability testing, VR</small>
@@ -111,11 +150,10 @@
           Old Projects (GitHub)
           <small>Archived coursework — systems, Java, databases, data viz</small>
         </a>
-        <a class="featured-link" href="manifesto.html">
-          Design Manifesto
-          <small>Design philosophy and process</small>
-        </a>
       </div>
+      <p class="section-footer-link">
+        <a href="school.html">Browse all school projects →</a>
+      </p>
     </section>
 
     <footer class="site-footer">
