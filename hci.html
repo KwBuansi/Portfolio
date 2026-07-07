@@ -7,6 +7,18 @@
       name="description"
       content="HCI and data visualization projects by Kwasi Buansi — design sprints, d3.js charts, usability testing, and VR."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kwasi Buansi | HCI &amp; Data Viz" />
+    <meta
+      property="og:description"
+      content="HCI and data visualization projects — D3.js charts, design sprints, usability testing, and VR."
+    />
+    <meta property="og:url" content="https://kwbuansi.github.io/portfolio/hci.html" />
+    <meta
+      property="og:image"
+      content="https://kwbuansi.github.io/portfolio/images/starbucks.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>Kwasi Buansi Portfolio | HCI &amp; Data Visualization</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,12 +54,23 @@
 
     <nav class="site-nav-wrap" aria-label="Main navigation">
       <div class="site-nav">
-        <a href="index.html">Home</a>
-        <a href="hci.html" class="active">HCI &amp; Data Viz</a>
-        <a href="systems.html">Systems &amp; Infrastructure</a>
-        <a href="databases.html">Databases &amp; Backend</a>
-        <a href="algorithms.html">Algorithms &amp; Java</a>
-        <a href="manifesto.html">Design Manifesto</a>
+        <div class="site-nav-articles" aria-label="Articles">
+          <a href="jitvis-blog.html">JITVis Research</a>
+          <a href="starbucks-blog.html">Starbucks DataViz</a>
+          <a href="manifesto.html">Design Manifesto</a>
+        </div>
+        <span class="site-nav-divider" aria-hidden="true"></span>
+        <div class="site-nav-main">
+          <a href="index.html">Home</a>
+          <a href="hci.html" class="active">HCI &amp; Data Viz</a>
+          <a href="systems.html">Systems &amp; Infrastructure</a>
+          <a href="databases.html">Databases &amp; Backend</a>
+          <a href="algorithms.html">Algorithms &amp; Java</a>
+        </div>
+        <div class="site-nav-actions">
+          <a href="Kwasi_Buansi_Resume.pdf" class="site-nav-cta" download="Kwasi_Buansi_Resume.pdf">Resume</a>
+          <a href="mailto:kwasibuansi@gmail.com" class="site-nav-cta site-nav-cta--contact">Contact</a>
+        </div>
       </div>
     </nav>
 
@@ -204,9 +227,9 @@
             <div class="project-card-body">
               <b>Starbucks Orders by Locale</b>
               <p>
-                Visualization of synthetic Starbucks ordering patterns across
-                the United States with day and region filters, plus an
-                interactive pie chart for comparative analysis.
+                Surfaced cyclical order patterns across 24 hours and four U.S.
+                regions with a keyboard-accessible D3.js radial chart, live
+                filters, and hour-level breakdown panels.
               </p>
               <div class="tech-tags">
                 <span>d3.js</span>

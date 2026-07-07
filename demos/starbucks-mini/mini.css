@@ -1,0 +1,59 @@
+body {
+  overflow: hidden;
+  min-height: 100%;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 8px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls {
+  width: 100%;
+  padding: 8px 4px 4px;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.control .label {
+  font-size: 10px;
+}
+
+select {
+  height: 28px;
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+.chart-layout {
+  display: block;
+  width: 100%;
+}
+
+.chart-root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.chart-root svg {
+  display: block;
+  margin: 0 auto;
+  max-height: 300px;
+}
+
+.hour-detail-panel {
+  display: none !important;
+}
+
+.chart-card {
+  margin: 0;
+  width: 100%;
+}

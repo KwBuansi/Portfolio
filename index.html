@@ -7,6 +7,18 @@
       name="description"
       content="Kwasi Buansi — Computer Science student at Davidson College. Portfolio of systems programming, databases, algorithms, HCI, and data visualization projects."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Kwasi Buansi | Software Engineering Portfolio" />
+    <meta
+      property="og:description"
+      content="Backend systems in Python, Java, and C — plus D3.js developer tools including Google V8 JITVis research at Davidson College."
+    />
+    <meta property="og:url" content="https://kwbuansi.github.io/portfolio/" />
+    <meta
+      property="og:image"
+      content="https://kwbuansi.github.io/portfolio/images/jitvis-blog/heatmap.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>Kwasi Buansi Portfolio | Home</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,11 +42,81 @@
   </head>
 
   <body>
-    <header class="tech-header w3-display-container" id="home">
+    <header class="tech-header tech-header--home" id="home">
       <div class="tech-bg"></div>
-      <div class="w3-display-middle w3-center overlay-content">
-        <h1 class="w3-xxxlarge"><b>Kwasi Buansi</b></h1>
-        <span class="hero-subtitle">Computer Science · Davidson College</span>
+      <div class="hero-featured-stage" aria-label="Featured projects">
+        <header class="featured-stage-header">
+          <h1>Kwasi Buansi</h1>
+          <p>Computer Science · Davidson College</p>
+          <div class="hero-actions">
+            <a href="Kwasi_Buansi_Resume.pdf" class="hero-resume-btn" download="Kwasi_Buansi_Resume.pdf">Download Resume</a>
+            <a href="mailto:kwasibuansi@gmail.com" class="hero-contact-btn">Contact</a>
+          </div>
+        </header>
+
+        <div class="featured-stage-grid">
+          <div
+            class="featured-stage-tabs"
+            role="tablist"
+            aria-label="Featured project selector"
+          >
+            <button
+              type="button"
+              class="featured-stage-tab active"
+              role="tab"
+              id="tab-jitvis"
+              aria-selected="true"
+              aria-controls="featured-stage-panel"
+              data-project="jitvis"
+            >
+              <span class="featured-stage-tab-num">01</span>
+              <span class="featured-stage-tab-label">Google V8 JITVis</span>
+            </button>
+            <button
+              type="button"
+              class="featured-stage-tab"
+              role="tab"
+              id="tab-unix-shell"
+              aria-selected="false"
+              aria-controls="featured-stage-panel"
+              data-project="unixShell"
+            >
+              <span class="featured-stage-tab-num">02</span>
+              <span class="featured-stage-tab-label">Unix Shell Architecture</span>
+            </button>
+            <button
+              type="button"
+              class="featured-stage-tab"
+              role="tab"
+              id="tab-starbucks"
+              aria-selected="false"
+              aria-controls="featured-stage-panel"
+              data-project="starbucks"
+            >
+              <span class="featured-stage-tab-num">03</span>
+              <span class="featured-stage-tab-label">Starbucks DataViz (D3.js)</span>
+            </button>
+            <button
+              type="button"
+              class="featured-stage-tab"
+              role="tab"
+              id="tab-student-hub"
+              aria-selected="false"
+              aria-controls="featured-stage-panel"
+              data-project="studentHub"
+            >
+              <span class="featured-stage-tab-num">04</span>
+              <span class="featured-stage-tab-label">Agile Student Hub</span>
+            </button>
+          </div>
+
+          <div
+            class="featured-stage-window"
+            id="featured-stage-panel"
+            role="tabpanel"
+            aria-labelledby="tab-jitvis"
+          ></div>
+        </div>
       </div>
     </header>
 
@@ -42,25 +124,38 @@
 
     <nav class="site-nav-wrap" aria-label="Main navigation">
       <div class="site-nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="hci.html">HCI &amp; Data Viz</a>
-        <a href="systems.html">Systems &amp; Infrastructure</a>
-        <a href="databases.html">Databases &amp; Backend</a>
-        <a href="algorithms.html">Algorithms &amp; Java</a>
-        <a href="manifesto.html">Design Manifesto</a>
+        <div class="site-nav-articles" aria-label="Articles">
+          <a href="jitvis-blog.html">JITVis Research</a>
+          <a href="starbucks-blog.html">Starbucks DataViz</a>
+          <a href="manifesto.html">Design Manifesto</a>
+        </div>
+        <span class="site-nav-divider" aria-hidden="true"></span>
+        <div class="site-nav-main">
+          <a href="index.html" class="active">Home</a>
+          <a href="hci.html">HCI &amp; Data Viz</a>
+          <a href="systems.html">Systems &amp; Infrastructure</a>
+          <a href="databases.html">Databases &amp; Backend</a>
+          <a href="algorithms.html">Algorithms &amp; Java</a>
+        </div>
+        <div class="site-nav-actions">
+          <a href="Kwasi_Buansi_Resume.pdf" class="site-nav-cta" download="Kwasi_Buansi_Resume.pdf">Resume</a>
+          <a href="mailto:kwasibuansi@gmail.com" class="site-nav-cta site-nav-cta--contact">Contact</a>
+        </div>
       </div>
     </nav>
 
     <section id="about-section" class="w3-container">
       <h2 class="w3-xxxlarge"><b>About Me</b></h2>
-      <p class="w3-large">
-        My name is Kwasi Buansi. I am a Computer Science major and Data Science
-        minor at Davidson College. The bulk of my coding experience is in backend
-        development with Python and Java, complemented by front-end work in
-        JavaScript, HTML, and CSS across school and personal projects. I have
-        built systems in C at the OS level, designed relational databases with
-        SQL, and created interactive experiences with d3.js, React, and A-Frame.
-        This portfolio showcases the projects I am most proud of.
+      <p class="w3-large about-lead">
+        I'm a Computer Science major & Data Science minor at Davidson College.
+        I build backend systems in Python, Java, and C and interactive developer
+        tools with D3.js and React — including summer research on Google V8
+        compiler visualization at Davidson's Data Visualization Lab.
+      </p>
+      <p class="about-meta">
+        <span>Expected graduation: <strong>May 2027</strong></span>
+        <span class="about-meta-sep" aria-hidden="true">·</span>
+        <span>Authorized to work in the <strong>United States</strong></span>
       </p>
 
       <div class="skills-grid" aria-label="Technical skills">
@@ -77,7 +172,16 @@
         <span class="skill-pill">Git</span>
       </div>
 
+      <div class="credibility-bar" aria-label="Affiliations and recognition">
+        <ul class="credibility-list">
+          <li><strong>Davidson College</strong> — Farm Assistant at the Davidson College Farm</li>
+          <li><strong>Startery Launchpad</strong> — Summer 2025 SE Intern</li>
+          <li><strong>Davidson Data Vis Lab</strong> — Summer 2026 SE & Research Assistant</li>
+        </ul>
+      </div>
+
       <div class="contact-bar">
+        <a href="Kwasi_Buansi_Resume.pdf" download="Kwasi_Buansi_Resume.pdf">Resume</a>
         <a href="https://github.com/KwBuansi" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://linkedin.com/in/kwasi-buansi-bb21a5236" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:kwasibuansi@gmail.com">kwasibuansi@gmail.com</a>
@@ -126,5 +230,7 @@
       </div>
       <p>&copy; 2026 Kwasi Buansi · Davidson College</p>
     </footer>
+
+    <script src="js/featured-stage.js"></script>
   </body>
 </html>

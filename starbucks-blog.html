@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Article: Starbucks order patterns visualization — Python data cleaning and keyboard-accessible D3.js radial chart."
+    />
+    <title>Kwasi Buansi Portfolio | Starbucks DataViz</title>
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Kwasi Buansi | Starbucks DataViz" />
+    <meta
+      property="og:description"
+      content="Building a keyboard-accessible D3.js radial chart for Starbucks order patterns — from data cleaning to deployment."
+    />
+    <meta property="og:url" content="https://kwbuansi.github.io/portfolio/starbucks-blog.html" />
+    <meta
+      property="og:image"
+      content="https://kwbuansi.github.io/portfolio/images/starbucks.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/portfolio.css" />
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Raleway", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="tech-header w3-display-container" id="home">
+      <div class="tech-bg"></div>
+      <div class="w3-display-middle w3-center overlay-content">
+        <h1 class="w3-xxxlarge"><b>Kwasi Buansi</b></h1>
+        <span class="hero-subtitle">Starbucks DataViz</span>
+      </div>
+    </header>
+
+    <div class="header-fade"></div>
+
+    <nav class="site-nav-wrap" aria-label="Main navigation">
+      <div class="site-nav">
+        <div class="site-nav-articles" aria-label="Articles">
+          <a href="jitvis-blog.html">JITVis Research</a>
+          <a href="starbucks-blog.html" class="active">Starbucks DataViz</a>
+          <a href="manifesto.html">Design Manifesto</a>
+        </div>
+        <span class="site-nav-divider" aria-hidden="true"></span>
+        <div class="site-nav-main">
+          <a href="index.html">Home</a>
+          <a href="hci.html">HCI &amp; Data Viz</a>
+          <a href="systems.html">Systems &amp; Infrastructure</a>
+          <a href="databases.html">Databases &amp; Backend</a>
+          <a href="algorithms.html">Algorithms &amp; Java</a>
+        </div>
+        <div class="site-nav-actions">
+          <a href="Kwasi_Buansi_Resume.pdf" class="site-nav-cta" download="Kwasi_Buansi_Resume.pdf">Resume</a>
+          <a href="mailto:kwasibuansi@gmail.com" class="site-nav-cta site-nav-cta--contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <article class="manifesto-content jitvis-blog">
+      <header class="manifesto-intro jitvis-intro">
+        <h2>Starbucks Customer Order Times by Locale</h2>
+        <p class="jitvis-meta">
+          Davidson College &middot; CSC 362 &middot; Kwasi Buansi &amp; Pacis Nkubito
+        </p>
+        <p class="manifesto-lead">
+          An interactive D3.js radial chart that maps average Starbucks order volume
+          across a 24-hour clock, split by urban and suburban locales, with
+          region and day-of-week filters and a detail panel for hour-level
+          breakdowns.
+        </p>
+        <div class="jitvis-tags" aria-label="Technologies and topics">
+          <span class="skill-pill">D3.js</span>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">Data Cleaning</span>
+          <span class="skill-pill">Accessibility</span>
+        </div>
+        <a
+          class="jitvis-repo-link"
+          href="https://github.com/KwBuansi/CSC-362-Final-Project"
+          target="_blank"
+          rel="noopener noreferrer"
+          >View project on GitHub</a
+        >
+      </header>
+
+      <section class="manifesto-section">
+        <h3>Starting with the data</h3>
+        <p>
+          This project began as our final assignment for CSC 362 (Data
+          Visualization). Pacis Nkubito and I wanted to explore how customer
+          ordering patterns differ between urban and suburban Starbucks locations
+          across the United States. We started with a
+          <a
+            href="https://www.kaggle.com/datasets/likithagedipudi/starbucks-customer-ordering-patterns"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Kaggle dataset of Starbucks customer ordering patterns</a
+          >, which included timestamps, store location types, regions, and days
+          of the week.
+        </p>
+        <p>
+          The raw data was too granular for direct visualization. Each row
+          recorded an individual order time down to the minute, and rural stores
+          were sparse enough that they would have cluttered comparisons without
+          adding much signal. We wrote a Python cleaning script to reshape the
+          dataset into the question we actually cared about: for a given region,
+          locale, day, and hour, what is the average number of orders?
+        </p>
+        <p>
+          The pipeline removed rural locations, truncated every order timestamp
+          to the hour (8:54 AM becomes 8 AM, 7:45 PM becomes 7 PM), kept only
+          the columns we needed (<code>store_location_type</code>,
+          <code>region</code>, <code>day_of_week</code>,
+          <code>order_time</code>), and aggregated across the full dataset. The
+          result is a compact CSV where each row reads something like: in the
+          Northeast on Monday at 7 PM, suburban Starbucks locations average 15
+          orders per hour.
+        </p>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>Choosing a radial layout</h3>
+        <p>
+          Order volume is inherently cyclical — morning rush, lunch spike,
+          evening taper, overnight lull — so a linear bar chart felt wrong. We
+          mapped the 24 hours of the day onto a clock face, reading clockwise
+          from midnight at the top. Each hour gets a stacked radial bar: the
+          inner segment represents urban volume and the outer segment represents
+          suburban volume. Bar length encodes average orders, so you can scan the
+          full day at a glance and spot peak hours without mentally wrapping a
+          flat axis.
+        </p>
+        <figure class="manifesto-figure">
+          <img
+            src="images/starbucks.png"
+            alt="Radial stacked bar chart of Starbucks order volume by hour, with urban and suburban locales shown as inner and outer segments."
+          />
+          <figcaption>
+            The finished radial chart with region and day filters, pattern-filled
+            locale segments, and an hour detail panel on the right.
+          </figcaption>
+        </figure>
+        <p>
+          Color alone is not enough to distinguish locales reliably — especially
+          for color-blind readers — so we paired each locale with a distinct SVG
+          pattern fill: dotted texture for urban and diagonal stripes for
+          suburban. Solid stroke colors reinforce the legend without relying on
+          hue alone.
+        </p>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>Building it in D3.js</h3>
+        <p>
+          The visualization is built with D3.js v7 and vanilla JavaScript. The
+          chart root is a single SVG with generous padding so hour labels and
+          tick marks stay legible at different viewport sizes. D3's
+          <code>d3.stack()</code> drives the radial segments: we pivot the
+          cleaned data so each hour row holds urban and suburban values, then
+          map those stacks onto arc generators with an inner radius of 200px and
+          an outer radius of 510px.
+        </p>
+        <p>
+          Two dropdown filters — region and day of week — recompute the stacked
+          dataset and transition the arcs in place. Hovering a segment shows a
+          tooltip with the 12-hour clock conversion and the exact average order
+          count. Clicking an hour opens a side detail panel with a small pie
+          chart breaking down that hour's urban vs. suburban split, using the
+          same pattern fills so the visual language stays consistent.
+        </p>
+        <p>
+          Responsive layout was a priority from the start. The chart measures its
+          container and scales the SVG viewBox so the radial geometry stays
+          proportional on smaller screens, and the detail panel collapses below
+          the chart when horizontal space runs out.
+        </p>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>Accessibility and keyboard support</h3>
+        <p>
+          Because this was a course project with an explicit accessibility
+          requirement, we treated WCAG compliance as a design constraint rather
+          than an afterthought. The page includes a skip link to jump directly to
+          the chart, filter controls are native <code>&lt;select&gt;</code>
+          elements with associated labels, and an <code>aria-live</code> region
+          announces filter changes and hour selections to screen readers.
+        </p>
+        <p>
+          Each radial segment is focusable and navigable with Tab and arrow keys.
+          Focused segments receive a visible outline, and activating a segment
+          with Enter or Space opens the same detail panel as a mouse click. SVG
+          elements carry <code>role</code>, <code>tabindex</code>, and
+          <code>aria-label</code> attributes so assistive technology can
+          describe hour, locale, and order count without requiring sighted
+          interaction.
+        </p>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>What I took away</h3>
+        <p>
+          This was one of the first projects where I owned the full pipeline —
+          from messy CSV to polished interactive visualization. The hardest part
+          was not the D3 math but deciding what question the chart should answer
+          and shaping the data to match. Once the aggregation was right, the
+          radial layout made the cyclical patterns obvious in ways a standard bar
+          chart never would have.
+        </p>
+        <p>
+          The full source code, cleaned dataset, and usage instructions are in
+          the
+          <a
+            href="https://github.com/KwBuansi/CSC-362-Final-Project"
+            target="_blank"
+            rel="noopener noreferrer"
+            >CSC-362-Final-Project repository on GitHub</a
+          >. You can also try a live preview on the
+          <a href="index.html">portfolio homepage</a> featured project stage.
+        </p>
+      </section>
+    </article>
+
+    <footer class="site-footer">
+      <div class="contact-links">
+        <a href="https://github.com/KwBuansi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/kwasi-buansi-bb21a5236" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:kwasibuansi@gmail.com">Email</a>
+      </div>
+      <p>&copy; 2026 Kwasi Buansi · Davidson College</p>
+    </footer>
+  </body>
+</html>

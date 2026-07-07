@@ -3,6 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Design manifesto by Kwasi Buansi — human-centered design principles from five HCI design sprints at Davidson College."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Kwasi Buansi | Design Manifesto" />
+    <meta
+      property="og:description"
+      content="Five human-centered design principles from HCI coursework — needfinding, prototyping, and iteration."
+    />
+    <meta property="og:url" content="https://kwbuansi.github.io/portfolio/manifesto.html" />
+    <meta
+      property="og:image"
+      content="https://kwbuansi.github.io/portfolio/images/designthink.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>Kwasi Buansi Portfolio | Design Manifesto</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,18 +54,32 @@
 
     <nav class="site-nav-wrap" aria-label="Main navigation">
       <div class="site-nav">
-        <a href="index.html">Home</a>
-        <a href="hci.html">HCI &amp; Data Viz</a>
-        <a href="systems.html">Systems &amp; Infrastructure</a>
-        <a href="databases.html">Databases &amp; Backend</a>
-        <a href="algorithms.html">Algorithms &amp; Java</a>
-        <a href="manifesto.html" class="active">Design Manifesto</a>
+        <div class="site-nav-articles" aria-label="Articles">
+          <a href="jitvis-blog.html">JITVis Research</a>
+          <a href="starbucks-blog.html">Starbucks DataViz</a>
+          <a href="manifesto.html" class="active">Design Manifesto</a>
+        </div>
+        <span class="site-nav-divider" aria-hidden="true"></span>
+        <div class="site-nav-main">
+          <a href="index.html">Home</a>
+          <a href="hci.html">HCI &amp; Data Viz</a>
+          <a href="systems.html">Systems &amp; Infrastructure</a>
+          <a href="databases.html">Databases &amp; Backend</a>
+          <a href="algorithms.html">Algorithms &amp; Java</a>
+        </div>
+        <div class="site-nav-actions">
+          <a href="Kwasi_Buansi_Resume.pdf" class="site-nav-cta" download="Kwasi_Buansi_Resume.pdf">Resume</a>
+          <a href="mailto:kwasibuansi@gmail.com" class="site-nav-cta site-nav-cta--contact">Contact</a>
+        </div>
       </div>
     </nav>
 
-    <article class="manifesto-content">
-      <header class="manifesto-intro">
+    <article class="manifesto-content jitvis-blog">
+      <header class="manifesto-intro jitvis-intro">
         <h2>Design Manifesto</h2>
+        <p class="jitvis-meta">
+          Davidson College &middot; HCI &middot; Kwasi Buansi
+        </p>
         <p class="manifesto-lead">
           Products in tech often fail because teams build what users ask for
           rather than what they actually need. Human-centered design — grounded
@@ -57,23 +87,34 @@
           investing in expensive builds. After five HCI design sprints, these
           five principles stood out as the most vital.
         </p>
+        <div class="jitvis-tags" aria-label="Topics">
+          <span class="skill-pill">Human-Centered Design</span>
+          <span class="skill-pill">Prototyping</span>
+          <span class="skill-pill">Accessibility</span>
+          <span class="skill-pill">Iteration</span>
+        </div>
       </header>
 
-      <figure class="manifesto-figure">
-        <img src="./images/designthink.png" alt="The design thinking process diagram." />
-        <figcaption>
-          The design process.
-          <a href="https://www.nngroup.com/articles/design-thinking/">nngroup.com</a>
-        </figcaption>
-      </figure>
+      <section class="manifesto-section">
+        <figure class="manifesto-figure">
+          <img src="images/designthink.png" alt="The design thinking process diagram." />
+          <figcaption>
+            The design process.
+            <a href="https://www.nngroup.com/articles/design-thinking/">nngroup.com</a>
+          </figcaption>
+        </figure>
 
-      <ol class="manifesto-principles">
-        <li>Establish a plan before building</li>
-        <li>Constrain adequately, but be ambitious</li>
-        <li>Be ready to solve the same problem multiple times</li>
-        <li>Always have a target audience in mind</li>
-        <li>Be prepared to learn something new</li>
-      </ol>
+        <div class="jitvis-workflow">
+          <p class="jitvis-workflow-label">Five principles</p>
+          <ol>
+            <li>Establish a plan before building</li>
+            <li>Constrain adequately, but be ambitious</li>
+            <li>Be ready to solve the same problem multiple times</li>
+            <li>Always have a target audience in mind</li>
+            <li>Be prepared to learn something new</li>
+          </ol>
+        </div>
+      </section>
 
       <section class="manifesto-section">
         <h3>1. Establish a plan before building</h3>
@@ -94,7 +135,7 @@
           human-centered design really shows up.
         </p>
         <figure class="manifesto-figure">
-          <img src="./images/sketches.png" alt="Low-fidelity sketches of the Knotty and Board homepage." />
+          <img src="images/sketches.png" alt="Low-fidelity sketches of the Knotty and Board homepage." />
           <figcaption>Low-fidelity sketches of the Knotty &amp; Board prototype homepage</figcaption>
         </figure>
       </section>
@@ -114,7 +155,7 @@
           improvements to the existing design rather than starting over.
         </p>
         <figure class="manifesto-figure">
-          <img src="./images/ds4.png" alt="Final prototype of the Knotty and Board kiosk." />
+          <img src="images/ds4.png" alt="Final prototype of the Knotty and Board kiosk." />
           <figcaption>Final prototype of the Knotty &amp; Board kiosk</figcaption>
         </figure>
       </section>
@@ -143,7 +184,7 @@
           accessibility gaps everywhere I browsed.
         </p>
         <figure class="manifesto-figure">
-          <img src="./images/accessibility.png" alt="Web accessibility considerations diagram." />
+          <img src="images/accessibility.png" alt="Web accessibility considerations diagram." />
           <figcaption>
             Web accessibility considerations, among others.
             <a href="https://www.108ideaspace.com/boost-inclusivity-with-an-accessible-website/">108ideaspace.com</a>

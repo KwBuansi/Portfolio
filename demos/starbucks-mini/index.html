@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starbucks DataViz Preview</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./mini.css" />
+  </head>
+  <body>
+    <main id="main-content" class="container">
+      <section class="controls" aria-label="Chart controls"></section>
+      <div id="chart-announce" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+      <section class="card chart-card" aria-label="Radial chart">
+        <div class="chart-layout">
+          <div id="chart" class="chart-root"></div>
+          <aside
+            id="hour-detail-panel"
+            class="hour-detail-panel"
+            aria-label="Hour breakdown"
+            hidden
+          ></aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="./src/main-mini.js"></script>
+  </body>
+</html>

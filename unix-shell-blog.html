@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Article: building a POSIX-compliant Unix shell in C with pipelines, job control, and signal handling."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Kwasi Buansi | Unix Shell Article" />
+    <meta
+      property="og:description"
+      content="From-scratch Unix shell in C — pipelines, redirection, background jobs, and signal handling."
+    />
+    <meta
+      property="og:url"
+      content="https://kwbuansi.github.io/portfolio/unix-shell-blog.html"
+    />
+    <meta
+      property="og:image"
+      content="https://kwbuansi.github.io/portfolio/images/jitvis-blog/heatmap.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Kwasi Buansi Portfolio | Unix Shell</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/portfolio.css" />
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Raleway", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="tech-header w3-display-container" id="home">
+      <div class="tech-bg"></div>
+      <div class="w3-display-middle w3-center overlay-content">
+        <h1 class="w3-xxxlarge"><b>Kwasi Buansi</b></h1>
+        <span class="hero-subtitle">Unix Shell</span>
+      </div>
+    </header>
+
+    <div class="header-fade"></div>
+
+    <nav class="site-nav-wrap" aria-label="Main navigation">
+      <div class="site-nav">
+        <div class="site-nav-articles" aria-label="Articles">
+          <a href="jitvis-blog.html">JITVis Research</a>
+          <a href="starbucks-blog.html">Starbucks DataViz</a>
+          <a href="manifesto.html">Design Manifesto</a>
+        </div>
+        <span class="site-nav-divider" aria-hidden="true"></span>
+        <div class="site-nav-main">
+          <a href="index.html">Home</a>
+          <a href="hci.html">HCI &amp; Data Viz</a>
+          <a href="systems.html">Systems &amp; Infrastructure</a>
+          <a href="databases.html">Databases &amp; Backend</a>
+          <a href="algorithms.html">Algorithms &amp; Java</a>
+        </div>
+        <div class="site-nav-actions">
+          <a href="Kwasi_Buansi_Resume.pdf" class="site-nav-cta" download="Kwasi_Buansi_Resume.pdf">Resume</a>
+          <a href="mailto:kwasibuansi@gmail.com" class="site-nav-cta site-nav-cta--contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <article class="manifesto-content jitvis-blog">
+      <header class="manifesto-intro jitvis-intro">
+        <h2>Unix Shell Architecture</h2>
+        <p class="jitvis-meta">
+          Davidson College &middot; CSC 250 &middot; Kwasi Buansi
+        </p>
+        <p class="manifesto-lead">
+          A from-scratch command-line shell in C that parses user input into
+          executable pipelines — supporting I/O redirection, background jobs,
+          command history, and signal handling through POSIX system calls.
+        </p>
+        <div class="jitvis-tags" aria-label="Technologies">
+          <span class="skill-pill">C</span>
+          <span class="skill-pill">POSIX</span>
+          <span class="skill-pill">Systems Programming</span>
+        </div>
+        <a
+          class="jitvis-repo-link"
+          href="https://github.com/KwBuansi/Old-Projects/tree/main/systems/unix-shell"
+          target="_blank"
+          rel="noopener noreferrer"
+          >View project on GitHub</a
+        >
+      </header>
+
+      <section class="manifesto-section">
+        <h3>The goal</h3>
+        <p>
+          The assignment was to build a shell that behaves like a real Unix
+          terminal — not a toy evaluator. That meant handling multi-stage
+          pipelines, redirecting stdin/stdout to files, running jobs in the
+          background, and recovering gracefully from signals like SIGINT and
+          SIGTSTP.
+        </p>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>How it works</h3>
+        <p>
+          Input moves through a tokenizer that splits commands into words,
+          operators, and redirection tokens. A parser builds an abstract syntax
+          tree of pipelines and simple commands. The executor walks that tree,
+          calling <code>fork()</code> for each stage, wiring pipes with
+          <code>pipe()</code> and <code>dup2()</code>, and waiting on child
+          processes with <code>waitpid()</code>.
+        </p>
+        <p>
+          Background jobs are tracked in a job table so the shell can report
+          status changes and reap zombie processes. Signal handlers forward
+          interrupts to the foreground process group without killing the shell
+          itself.
+        </p>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>What I learned</h3>
+        <p>
+          This project made process management concrete. Reading about
+          <code>fork</code> in a textbook is different from debugging a pipeline
+          where stage two never receives input because a file descriptor was
+          left open. The shell is one of the projects that most directly
+          prepared me for thinking about how programs actually run on an OS.
+        </p>
+      </section>
+    </article>
+
+    <footer class="site-footer">
+      <div class="contact-links">
+        <a href="https://github.com/KwBuansi" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/kwasi-buansi-bb21a5236" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:kwasibuansi@gmail.com">Email</a>
+      </div>
+      <p>&copy; 2026 Kwasi Buansi · Davidson College</p>
+    </footer>
+  </body>
+</html>
