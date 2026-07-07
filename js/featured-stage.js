@@ -24,11 +24,6 @@ const featuredProjects = {
     ctaHref:
       "https://github.com/KwBuansi/Old-Projects/tree/main/systems/unix-shell",
     external: true,
-    secondaryCta: {
-      text: "Read Article →",
-      href: "unix-shell-blog.html",
-      external: false,
-    },
   },
   starbucks: {
     title: "Starbucks DataViz (D3.js)",
@@ -52,9 +47,9 @@ const featuredProjects = {
   },
   studentHub: {
     title: "Agile Student Hub",
-    trace: "student_hub.api — Sprint Deployment Active",
+    trace: "student_hub.build — CSC 312 Final Sprint",
     description:
-      "Led a four-person Scrum team as Product Owner to ship a campus hub for course reviews, professor ratings, and club discovery — live on Vercel with React and Supabase.",
+      "Served as Product Owner on a four-person Scrum team building a campus hub for course reviews, academic resources, and club discovery — a React and Supabase prototype for CSC 312 Software Design.",
     tags: ["React", "Supabase", "Full-Stack", "Agile Scrum"],
     ctaText: "View Repository →",
     ctaHref: "https://github.com/N-Pacis/Student-Hub.git",
@@ -67,7 +62,7 @@ const featuredProjects = {
     preview: {
       type: "image",
       src: "images/previews/student-hub.png",
-      alt: "Student Hub dashboard showing club events and organization listings",
+      alt: "Student Hub feed page with posts, voting, and top posts of the week",
       background: "#000000",
     },
   },

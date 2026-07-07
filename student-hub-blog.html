@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Article: Student Hub — a full-stack campus platform built with React, Supabase, and Agile Scrum."
+      content="Student Hub Final Report — a Davidson-centered platform for course reviews, academic resources, clubs, events, and discussion."
     />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Kwasi Buansi | Student Hub Article" />
+    <meta property="og:title" content="Kwasi Buansi | Student Hub" />
     <meta
       property="og:description"
-      content="Led a four-person Scrum team to ship a React and Supabase campus platform for course reviews, clubs, and academic resources."
+      content="CSC 312 Software Design final report — building Student Hub with Agile Scrum, React, and Supabase."
     />
     <meta
       property="og:url"
@@ -41,6 +41,35 @@
       h6 {
         font-family: "Raleway", sans-serif;
       }
+
+      .jitvis-blog .report-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .jitvis-blog .report-table th,
+      .jitvis-blog .report-table td {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 0.65rem 0.75rem;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .jitvis-blog .report-table th {
+        font-weight: 600;
+      }
+
+      .jitvis-blog .report-subsection {
+        margin-top: 1.75rem;
+      }
+
+      .jitvis-blog .report-subsection h4 {
+        margin: 0 0 0.75rem;
+        font-size: 1.05rem;
+        font-weight: 600;
+      }
     </style>
   </head>
 
@@ -49,7 +78,7 @@
       <div class="tech-bg"></div>
       <div class="w3-display-middle w3-center overlay-content">
         <h1 class="w3-xxxlarge"><b>Kwasi Buansi</b></h1>
-        <span class="hero-subtitle">Agile Student Hub</span>
+        <span class="hero-subtitle">Student Hub</span>
       </div>
     </header>
 
@@ -60,6 +89,7 @@
         <div class="site-nav-articles" aria-label="Articles">
           <a href="jitvis-blog.html">JITVis Research</a>
           <a href="starbucks-blog.html">Starbucks DataViz</a>
+          <a href="student-hub-blog.html" class="active">Student Hub</a>
           <a href="manifesto.html">Design Manifesto</a>
         </div>
         <span class="site-nav-divider" aria-hidden="true"></span>
@@ -79,20 +109,24 @@
 
     <article class="manifesto-content jitvis-blog">
       <header class="manifesto-intro jitvis-intro">
-        <h2>Agile Student Hub</h2>
+        <h2>Student Hub — Final Report</h2>
         <p class="jitvis-meta">
-          Davidson College &middot; CSC 353 &middot; Kwasi Buansi &amp; team
+          Davidson College &middot; CSC 312 Software Design &middot; May 6, 2025
+          &middot; Kwasi Buansi, Chanelle Hirwa, Pacis Nkubito, Felipe Castellanos
         </p>
         <p class="manifesto-lead">
-          A centralized campus platform where students share course reviews, rate
-          professors, explore clubs, and exchange academic resources — shipped by
-          a four-person Agile Scrum team with React, Supabase, and Vercel.
+          Student Hub is a centralized Davidson College platform built with Agile
+          Scrum, React, and Supabase — unifying course reviews, academic resource
+          sharing, club and event discovery, and moderated discussion. This article
+          documents our CSC 312 final report: stakeholder requirements, product and
+          sprint backlogs, SMART goals, system architecture, feature status with
+          screenshots, testing plans, project changelog, and sprint retrospective.
         </p>
-        <div class="jitvis-tags" aria-label="Technologies">
+        <div class="jitvis-tags" aria-label="Technologies and topics">
           <span class="skill-pill">React</span>
           <span class="skill-pill">Supabase</span>
           <span class="skill-pill">Agile Scrum</span>
-          <span class="skill-pill">Full-Stack</span>
+          <span class="skill-pill">Vercel</span>
         </div>
         <a
           class="jitvis-repo-link"
@@ -104,55 +138,1121 @@
       </header>
 
       <section class="manifesto-section">
-        <h3>The problem</h3>
+        <h3>1. Introduction</h3>
         <p>
-          Course planning at Davidson scattered information across word of mouth,
-          outdated spreadsheets, and one-off GroupMe threads. Students needed one
-          place to compare classes, find clubs, and share resources without
-          digging through disconnected channels.
+          Student Hub is a centralized web platform designed for the Davidson
+          College community. Its primary goal is to support students in their
+          academic and extracurricular endeavors by providing a unified space for
+          accessing and sharing course reviews, exchanging academic resources, and
+          discovering campus organizations.
+        </p>
+        <p>
+          The motivation for the project stems from a common challenge students
+          face at Davidson: important information is scattered across multiple
+          platforms, many of which are unofficial, temporary, or limited in scope.
+          From course advice shared over group chats to event postings buried in
+          email threads, students often lack a structured and persistent place to
+          find or contribute helpful insights. Student Hub seeks to fill this gap
+          by bringing together features for reviewing courses, exploring clubs, and
+          engaging in academic discussion — all within a moderated and
+          community-oriented platform.
+        </p>
+        <p>
+          The primary users of Student Hub are current Davidson College students,
+          especially underclassmen navigating new academic and social decisions.
+          Secondary users may include student organizations looking to increase
+          engagement and, importantly, faculty or administrators in two cases:
+          firstly, those who may want to understand student feedback trends; and
+          secondly, the faculty who are directly affected by the course ratings
+          page.
+        </p>
+        <p>
+          We used an Agile-Scrum development process for the Student Hub project.
+          Our work was organized into sprints, each including planning,
+          implementation, review, and retrospective stages. While we missed
+          formally assigning roles at first, we quickly adopted clearer
+          responsibilities and structured check-ins. We maintained a product
+          backlog and selected prioritized tasks for each sprint. Regular team
+          meetings functioned in the style of daily scrums, helping us track
+          progress and address blockers. At the end of each sprint, we reviewed
+          outcomes and discussed improvements. Our process emphasized collaboration,
+          adaptability, and iterative delivery, in line with Agile principles. The
+          report that follows outlines the design, implementation, and impact of
+          Student Hub, following months of iterative development, user testing, and
+          refinement.
+        </p>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>2. Novelty</h3>
+        <p>
+          The Student Hub is currently the only Davidson-centered space in which
+          students can discuss clubs, events, resources, courses, and academic and
+          social life. While WildcatSync allows students to browse and register for
+          clubs and events, our app emphasizes discussion amongst the student body.
+          No other Davidson-exclusive apps offer a discussion board format, similar
+          to Reddit, in which students can directly converse in an online space. We
+          believe this will help students, particularly new students, more easily
+          find club offerings they are interested in by reading about other
+          students' experiences.
+        </p>
+        <p>
+          RateMyProfessor, like our app, allows students to rate courses on a scale
+          of 1 to 5 based on their experiences. Our app, however, keeps professors'
+          privacy in mind, in that reviews are based purely on courses and are not
+          allowed to mention professors' names, maintaining these stakeholders' best
+          interest as a priority. This solves many of RateMyProfessor's ethic
+          issues, and in particular, how negative comments from students may impact
+          professors' well-being, privacy, and even tenure.
+        </p>
+        <p>
+          Finally, our app has some overlap with the Fizz app, which creates a
+          Davidson-exclusive feed where students post, upvote or downvote other
+          students' posts, and reply to posts. Fizz posts, however, generally lack
+          academic value. Our app's feed page emphasizes academic discussion and
+          discourages students from making off-topic posts, reminding students to
+          maintain proper discourse.
+        </p>
+        <p>
+          Our app focuses on implementing features found on other apps and expanding
+          on them, while at the same time providing brand-new features. We have
+          implemented a resource sharing page in which students can upload academic
+          resources, download other students' resources, and flag potentially
+          dangerous resources, such as cheat sheets, homework answers, and the
+          like. As far as we know, this is the only Davidson-exclusive app to allow
+          resource sharing in this format.
+        </p>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>3. Customers and stakeholders</h3>
+        <p>
+          As mentioned above, primary stakeholders of this platform are Davidson
+          College students. This project is designed to make students feel welcomed
+          at Davidson and to provide them with a centralized platform that offers
+          most of the resources and support they need. We came up with this idea
+          and engaged a group of students to help define the requirements and
+          provide feedback throughout the development process.
+        </p>
+        <p>
+          Professors are additional primary stakeholders, as course reviews may have
+          a direct impact on course registration. As such, we have designed the
+          system with safeguards in place to protect professors. Student reviews are
+          tied only to courses, not individual instructors.
+        </p>
+        <p>
+          Secondary stakeholders include non-student-led organizations, which may be
+          indirectly impacted by student discussion on the discussion board.
+        </p>
+
+        <div class="report-subsection">
+          <h4>Customer representatives</h4>
+          <ul class="manifesto-principles">
+            <li>Maria Fajardo (Sophomore) — mafajardo@davidson.edu</li>
+            <li>Yumna Ahmed (Senior) — yuahmed1@davidson.edu</li>
+            <li>Aileen Kavishe (Sophomore) — aikavishe@davidson.edu</li>
+            <li>Branton Mogeni (Freshman) — brmogeni@davidson.edu</li>
+            <li>Jasim Ansari (Junior) — jaansari@davidson.edu</li>
+          </ul>
+        </div>
+
+        <div class="report-subsection">
+          <h4>Meeting log</h4>
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>February 15, 2025</td>
+                <td>Student representatives</td>
+                <td>
+                  Students requested a platform where they can interact with each
+                  other anonymously, review courses and club organisations, and share
+                  academic resources like study guides and notes.
+                </td>
+              </tr>
+              <tr>
+                <td>February 24, 2025</td>
+                <td>Professor</td>
+                <td>
+                  Professors requested the removal of the professor rating system
+                  due to ethical concerns raised by faculty and administration,
+                  suggesting a shift toward course experience insights that focus on
+                  workload, assessment types, and learning styles instead of directly
+                  evaluating professors.
+                </td>
+              </tr>
+              <tr>
+                <td>March 5, 2025</td>
+                <td>Student representatives</td>
+                <td>
+                  Students requested the removal of the dashboard page and the making
+                  of the feed page the initial page. They also suggested adding quick
+                  campus-related links on the feed page.
+                </td>
+              </tr>
+              <tr>
+                <td>March 18, 2025</td>
+                <td>Student representatives</td>
+                <td>
+                  Students requested structured course reviews providing workload,
+                  assessment types, and learning style feedback. They also requested
+                  automated filtering and community flagging for respectful
+                  discussions.
+                </td>
+              </tr>
+              <tr>
+                <td>April 5, 2025</td>
+                <td>Student representatives</td>
+                <td>
+                  Students requested better visibility for post replies, more
+                  intuitive club interactions, sorting and filtering options for
+                  course reviews, and direct links from event cards to specific club
+                  pages.
+                </td>
+              </tr>
+              <tr>
+                <td>April 20, 2025</td>
+                <td>Student representatives</td>
+                <td>
+                  Students requested improved search functionality for courses, the
+                  ability to create and manage course reviews with real-time updates,
+                  enhanced club pages with event links and discussion boards, and
+                  features like "Top Posts of the Week" and post/reporting tools for
+                  better content moderation.
+                </td>
+              </tr>
+              <tr>
+                <td>April 27, 2025</td>
+                <td>Student representatives</td>
+                <td>
+                  Students requested search and sorting features for club discussion
+                  boards and expanded moderator tools to manage reported content more
+                  efficiently.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>4. Product backlogs</h3>
+
+        <div class="report-subsection">
+          <h4>Past iteration product backlogs</h4>
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th scope="col">Iteration period</th>
+                <th scope="col">Backlog items</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>April 1–7</td>
+                <td>
+                  Develop Feed page with rich-text input, image uploads, and
+                  interaction features (reply, upvote, downvote, anonymity)
+                </td>
+              </tr>
+              <tr>
+                <td>April 1–7</td>
+                <td>
+                  Add Feed page sidebar with posting rules, guidelines, and campus
+                  links
+                </td>
+              </tr>
+              <tr>
+                <td>April 1–7</td>
+                <td>Developed basic structure for Club pages</td>
+              </tr>
+              <tr>
+                <td>April 8–14</td>
+                <td>
+                  Implement Academic Resources page with upload, download, search, and
+                  report functionality using Supabase
+                </td>
+              </tr>
+              <tr>
+                <td>April 8–14</td>
+                <td>
+                  Build Course Review page with top-rated courses, search, review
+                  creation/edit/delete, and real-time updates
+                </td>
+              </tr>
+              <tr>
+                <td>April 8–14</td>
+                <td>
+                  Added post details page and replies, enabled only one review per
+                  student per course
+                </td>
+              </tr>
+              <tr>
+                <td>April 15–21</td>
+                <td>
+                  Create Extracurricular section with event details, host club links,
+                  and placeholder search bar
+                </td>
+              </tr>
+              <tr>
+                <td>April 15–21</td>
+                <td>
+                  Developed edit and delete course reviews functionality; developed
+                  the clubs page
+                </td>
+              </tr>
+              <tr>
+                <td>April 15–21</td>
+                <td>
+                  Added top posts of the week and reporting functionality for both
+                  posts and replies; added usernames and dates for course reviews
+                </td>
+              </tr>
+              <tr>
+                <td>April 15–21</td>
+                <td>Discuss basic moderation dashboard UI</td>
+              </tr>
+              <tr>
+                <td>April 21–29</td>
+                <td>
+                  Integration of backend to multiview setup (card/list view) and
+                  testing
+                </td>
+              </tr>
+              <tr>
+                <td>April 21–29</td>
+                <td>
+                  Enhancement of upload page on Resources Tab and integration of
+                  toast functionality
+                </td>
+              </tr>
+              <tr>
+                <td>April 21–29</td>
+                <td>
+                  Added upvoting, sorting and search functionality in the events page
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="report-subsection">
+          <h4>Product backlog for the next iteration</h4>
+          <p>
+            Assuming that a future sprint were to take place and this app was to be
+            implemented, here is the product backlog for the next iteration. This
+            product backlog is significantly more ambitious than any of the previous
+            ones, because a hypothetical upcoming sprint would likely take place over
+            the summer, when team members no longer have class commitments or other
+            academic responsibilities. With more time and flexibility, the team would
+            be able to focus on larger tasks like full feature integrations, UI
+            polish, and more rigorous testing. Additionally, this period would be
+            ideal for implementing backend improvements, establishing moderator
+            workflows, and preparing the platform for potential deployment or
+            broader user testing in the fall semester.
+          </p>
+          <ul class="manifesto-principles">
+            <li>Add search and sorting options to club discussion boards</li>
+            <li>Improve UI layout for Clubs page</li>
+            <li>Implement reporting for discussion board and course ratings</li>
+            <li>Pull clubs and events directly from WildcatSync</li>
+            <li>Enable registration for clubs and events via Student Hub</li>
+            <li>Implement Davidson Single Sign-On (SSO) integration</li>
+            <li>
+              Build moderator dashboard to review and act on reported posts and
+              replies
+            </li>
+            <li>Touch up visual consistency across all pages</li>
+            <li>Enable content approval workflow for uploaded academic resources</li>
+            <li>
+              Integrate Feed page and club Discussion Board for unified posting
+              system
+            </li>
+            <li>
+              Draft documentation for moderation procedures and approval thresholds
+            </li>
+            <li>Conduct usability testing and feedback survey for final features</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>5. Sprint backlogs</h3>
+
+        <div class="report-subsection">
+          <h4>Past iteration sprint backlogs</h4>
+          <ul class="manifesto-principles">
+            <li>
+              Developed the Feed page with a rich-text input supporting styling
+              (bold, italics, headings, links, etc.) and image uploads, along with
+              reply, upvote, and downvote functionalities, ensuring user anonymity by
+              hiding names and emails.
+            </li>
+            <li>
+              Added a sidebar on the Feed page displaying posting rules and
+              guidelines, and a section for helpful campus links, based on customer
+              feedback from the previous sprint.
+            </li>
+            <li>
+              Implemented the Academic Resources page with upload functionality
+              (course name, title, document type, file), prepared for integration to
+              secure storage in Supabase Storage, and a list of resources with
+              download and report buttons, plus a search bar for filtering by title
+              or course code.
+            </li>
+            <li>
+              Built the Courses Review page with a real-time top 3 rated classes
+              section (displaying course code, name, rating, and review count), a
+              paginated table with search functionality, and modals for writing and
+              viewing reviews, including reviewer names in the reviews modal, date
+              for reviews, editing and deleting reviews.
+            </li>
+            <li>
+              Created the Extracurricular section showing event details (name, date,
+              time, host club) fetched from Supabase, a non-functional search bar, and
+              a link to the host club's page with icon, name, and description, and
+              basic functionalities for thread page.
+            </li>
+            <li>
+              Implemented Events page and added upvoting, sorting, and search
+              functionalities.
+            </li>
+            <li>
+              Ensured all user content and files are securely stored in Supabase,
+              with proper anonymity for posts on the Feed page.
+            </li>
+          </ul>
+        </div>
+
+        <div class="report-subsection">
+          <h4>Sprint backlog for the next iteration</h4>
+          <ul class="manifesto-principles">
+            <li>Add search and sorting options to club discussion boards</li>
+            <li>Improve UI layout for Clubs page</li>
+            <li>Implement reporting for discussion board and course ratings</li>
+            <li>Pull clubs and events directly from WildcatSync</li>
+            <li>Ability to register for clubs and events via the Student Hub</li>
+            <li>Implement Davidson Single Sign-On (SSO) integration</li>
+            <li>
+              Build a moderator dashboard to review and act on reported posts and
+              replies
+            </li>
+            <li>Touch up visual consistency across all pages</li>
+            <li>Content approval for resources</li>
+            <li>Integrate feed and discussion board</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>6. SMART goals</h3>
+        <p>
+          This diagram is SMART because the top-level goals are broad and cover the
+          vast majority of our app's purpose, and the low-level goals are
+          achievable, can easily be tested for correct implementation, and are highly
+          specific, down to the database we intend to use and how we plan on
+          displaying information from it.
         </p>
         <figure class="manifesto-figure">
           <img
-            src="images/previews/student-hub.png"
-            alt="Student Hub dashboard showing club events and organization listings."
+            src="images/student-hub-blog/final-10-X39.png"
+            alt="SMART goals diagram mapping top-level Student Hub goals to specific implementation targets."
           />
           <figcaption>
-            The deployed Student Hub dashboard with club events and organization
-            listings.
+            SMART goals diagram — broad platform goals broken into testable,
+            implementation-specific targets.
           </figcaption>
         </figure>
-      </section>
-
-      <section class="manifesto-section">
-        <h3>My role</h3>
         <p>
-          I served as Product Owner on a team of four. That meant writing user
-          stories, prioritizing the backlog, running sprint planning, and keeping
-          scope realistic while still pushing toward a deployable product each
-          sprint. I also contributed directly to the React frontend and Supabase
-          backend integration.
+          Worth noting is that we highlighted multiple ways we can go about
+          preventing unapproved resources, which we have defined as "pirated
+          textbooks, test/homework answers, or anything else that violates the
+          Davidson College honor code," from circulating in our app. While we could
+          require resources to be approved by a moderator before being shared on the
+          app, we believed this may hurt the user experience in that resources would
+          likely take far longer to be uploaded, which conflicts with our goal of
+          creating a seamless user experience. For now, we are putting our faith in
+          the anonymous reporting system, but may substitute this in favor of
+          moderator approval in the future if need be.
         </p>
       </section>
 
       <section class="manifesto-section">
-        <h3>What we shipped</h3>
+        <h3>7. System description</h3>
         <p>
-          The team delivered authenticated user profiles, course review listings,
-          professor ratings, club discovery, and an events feed. Supabase handled
-          auth and PostgreSQL storage; the app deployed to Vercel for fast
-          iteration. Sprint retrospectives helped us cut features that sounded
-          good but did not serve the core user workflow.
+          The Student Hub is a web-based platform designed to improve student
+          engagement, academic collaboration, and resource-sharing within the college
+          community. It serves as a centralized space where students can explore
+          course listings, rate and review classes, share experiences about clubs,
+          exchange textbooks, and provide feedback on their academic and social life.
+          The system consists of multiple interconnected components that work
+          together to ensure a seamless and responsive user experience.
         </p>
+        <p>
+          The platform will be hosted on Vercel, which allows for easy deployment
+          and continuous integration. The system architecture is divided into the
+          following key components:
+        </p>
+        <ul class="manifesto-principles">
+          <li>
+            <strong>Frontend:</strong> The user-facing interface where students
+            interact with the platform. It retrieves data from the backend and
+            presents it dynamically.
+          </li>
+          <li>
+            <strong>Backend:</strong> Manages user authentication, data storage, and
+            business logic. It processes user requests, interacts with the database,
+            and sends the appropriate responses.
+          </li>
+          <li>
+            <strong>Database:</strong> Stores user information, course reviews,
+            resource-sharing posts, and feedback. Ensures data integrity and
+            accessibility.
+          </li>
+          <li>
+            <strong>Authentication:</strong> Students can log in or sign up using
+            their .edu email address. Supabase will verify the provided information,
+            return additional user details, and grant access to other sections of
+            the system.
+          </li>
+          <li>
+            <strong>APIs &amp; communication:</strong> The frontend communicates with
+            the backend via RESTful APIs, ensuring real-time interactions such as
+            posting reviews, updating course information, and sharing resources.
+          </li>
+        </ul>
       </section>
 
       <section class="manifesto-section">
-        <h3>What I learned</h3>
+        <h3>8. Current status</h3>
         <p>
-          Student Hub was as much a teamwork exercise as a technical one. Being
-          Product Owner forced me to say no to feature creep, communicate tradeoffs
-          clearly, and keep four developers aligned — skills that matter as much
-          as any framework on a resume.
+          For this sprint, we have completed the app's main functionality, complete
+          with a page for general academic discussion, course review, clubs and
+          events, and sharable resources. The main element missing from our project
+          is Davidson SSO, which we will need to collaborate with Davidson T&amp;I
+          to implement. Additionally, we need to sync our app with WildcatSync in
+          order to display clubs and events directly from the website, as opposed
+          to creating an entire new database with all of the information already in
+          WildcatSync.
         </p>
+        <p>
+          All of the below screenshots pertain to our frontend, as our backend is
+          handled by Supabase. They are all relevant, as each screenshot covers the
+          main components of our app (the resource sharing, feed, club, event,
+          discussion board, and course review pages).
+        </p>
+
+        <div class="report-subsection">
+          <h4>Feed page</h4>
+          <p>
+            The feed page underwent multiple UI adjustments along with an important
+            feature requested by our customers: post reporting. Clicking the flag in
+            the top-right corner of any post will open up the "Report Post" modal,
+            which will prompt the user to input a reason for flagging and any
+            additional comments they wish to make. Afterwards, the report will be
+            stored in our database, and the user will no longer see the post on the
+            feed page.
+          </p>
+          <p>
+            In addition, the three most upvoted posts of the week are now displayed
+            in the top right corner of the page. The last major change is the
+            addition of a link to a separate page to make threads with 3 or more
+            posts easier to view.
+          </p>
+          <p>
+            <strong>Input:</strong> User either writes/replies to a post,
+            upvotes/downvotes a post, or reports a post.<br />
+            <strong>Output:</strong> The Supabase server is updated with the relevant
+            information, and the Feed page reflects the update in the backend.
+          </p>
+          <figure class="manifesto-figure">
+            <img
+              src="images/student-hub-blog/final-12-X46.png"
+              alt="Student Hub feed page overview."
+            />
+            <figcaption>Feed page with rich-text posts and sidebar guidelines.</figcaption>
+          </figure>
+          <figure class="manifesto-figure">
+            <img
+              src="images/student-hub-blog/final-13-X49.png"
+              alt="Student Hub feed page with reporting modal and top posts of the week."
+            />
+            <figcaption>
+              Feed page with reporting, top weekly posts, and thread navigation.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="report-subsection">
+          <h4>Events and clubs page</h4>
+          <p>
+            The events page now has a functioning search bar in which events can be
+            filtered based on their name or the host club's name. The time is now
+            displayed using the 12-hour clock, and the date is now in MM/DD/YYYY
+            format.
+          </p>
+          <p>
+            The clubs page now has a prototype layout and displays all of the
+            selected club's future events, along with pagination to scroll through
+            events. The "Contact" button links to a modal that shows the club's
+            contact information, if provided, to facilitate contact with club
+            leadership.
+          </p>
+          <p>
+            Finally, due to technical and time constraints, we cannot sync our app
+            with WildcatSync, so the user will not be able to register for clubs or
+            events directly using our app. For the time being, we have provided a link
+            to WildcatSync to encourage users to register manually.
+          </p>
+          <p>
+            <strong>Input:</strong> User clicks on one of the events in the page.<br />
+            <strong>Output:</strong> The user is redirected to that event's respective
+            club page.
+          </p>
+          <figure class="manifesto-figure">
+            <img
+              src="images/student-hub-blog/final-16-X60.png"
+              alt="Student Hub events page with paginated event cards."
+            />
+            <figcaption>
+              Paginated event cards with search, host club links, and 12-hour times.
+            </figcaption>
+          </figure>
+          <figure class="manifesto-figure">
+            <img
+              src="images/student-hub-blog/final-14-X52.png"
+              alt="Student Hub club page with future events and contact modal."
+            />
+            <figcaption>
+              Club page with future events, contact modal, and WildcatSync link.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="report-subsection">
+          <h4>Discussion board</h4>
+          <p>
+            Our new discussion board is designed to be a space in which students can
+            specifically discuss clubs or club activities, designed separately from
+            the feed page to encourage more on-topic discussion. Currently, it
+            displays 12 threads per page in date order (newest to oldest), with
+            pagination to scroll through pages.
+          </p>
+          <p>
+            The board displays the title of each thread, the club it pertains to,
+            the user who made the post (or "Anonymous"), the date it was posted in
+            MM/DD/YYYY format, and the number of replies to the original post.
+            Clicking on one of the threads will bring the user to the thread page,
+            which displays the post title, poster (or "Anonymous"), the date and time
+            the post was posted, and an option to upvote or downvote the post. The
+            upvote/downvote option will not display if the original poster accessed
+            the thread.
+          </p>
+          <p>
+            Below that, there is a text area for users to write comments to the post,
+            along with a checkbox that, if checked, will make the user's name display
+            as "Anonymous." Beneath the text area, all of the replies to the post
+            will display in date order (newest to oldest), along with the option to
+            upvote or downvote each.
+          </p>
+          <p>
+            When making a new post, the app will display a modal containing a reminder
+            as to the discussion board guidelines, along with a link to the honor
+            code. The user will have to agree to all of the rules stipulated to
+            proceed. After which, the user is prompted to enter their thread's title,
+            content, and club that it pertains to, along with an option to post as
+            "Anonymous."
+          </p>
+          <p>
+            <strong>Input:</strong> The user sends/replies to a post, or
+            upvotes/downvotes a post.<br />
+            <strong>Output:</strong> The Supabase server is updated with the relevant
+            information, and the discussion board is updated to reflect the change in
+            the backend.
+          </p>
+          <figure class="manifesto-figure">
+            <img
+              src="images/student-hub-blog/final-17-X63.png"
+              alt="Student Hub club discussion board thread list."
+            />
+            <figcaption>
+              Discussion board listing threads by club with pagination.
+            </figcaption>
+          </figure>
+          <figure class="manifesto-figure">
+            <img
+              src="images/student-hub-blog/final-17-X64.png"
+              alt="Student Hub discussion board thread page with replies and voting."
+            />
+            <figcaption>
+              Thread page with anonymous replies and upvote/downvote controls.
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="report-subsection">
+          <h4>Resources page</h4>
+          <p>
+            For this sprint, the resources page was connected to our Supabase server,
+            where a table was made to store file metadata and a storage bucket to
+            store the actual files. Additionally, upon uploading a file, the page is
+            automatically updated based on the data in our database.
+          </p>
+          <p>
+            <strong>Input:</strong> The user uploads a file.<br />
+            <strong>Output:</strong> The file is stored in the Supabase server, and
+            the page is updated to reflect the change in the backend.
+          </p>
+          <figure class="manifesto-figure">
+            <img
+              src="images/student-hub-blog/final-18-X67.png"
+              alt="Student Hub resources page with upload and browse functionality."
+            />
+            <figcaption>
+              Resources page with Supabase-backed uploads and card/list views.
+            </figcaption>
+          </figure>
+          <figure class="manifesto-figure">
+            <img
+              src="images/student-hub-blog/final-19-X71.png"
+              alt="Student Hub resources upload flow."
+            />
+            <figcaption>Resource upload with automatic metadata detection.</figcaption>
+          </figure>
+        </div>
+
+        <div class="report-subsection">
+          <h4>Course review page</h4>
+          <p>
+            For this sprint, a search function was added in the "Write a Review" modal
+            that allows users to easily find their desired course when writing a
+            review. The search function filters based on the course's name or code,
+            and displays matching results in a drop-down list.
+          </p>
+          <p>
+            Users can now modify their existing review's rating and comment, and can
+            delete their review if desired. If a user does not input a valid star
+            rating (such as text instead of a number), the app will now display an
+            "invalid rating" message, prompting them to enter a valid rating.
+          </p>
+          <p>
+            <strong>Input:</strong> The user writes a review, or rates a course.<br />
+            <strong>Output:</strong> The Supabase server is updated with the relevant
+            change, and so is the page based on the backend.
+          </p>
+          <figure class="manifesto-figure">
+            <img
+              src="images/student-hub-blog/final-15-X56.png"
+              alt="Student Hub courses page with top-rated classes and review table."
+            />
+            <figcaption>
+              Courses page with top-rated classes and searchable review table.
+            </figcaption>
+          </figure>
+          <figure class="manifesto-figure">
+            <img
+              src="images/student-hub-blog/final-20-X77.png"
+              alt="Student Hub write a review modal with course search."
+            />
+            <figcaption>
+              Write a Review modal with searchable course dropdown and validation.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>8b. Software testing</h3>
+
+        <div class="report-subsection">
+          <h4>Test cases</h4>
+
+          <p><strong>1. Test Feed page</strong></p>
+          <ul class="manifesto-principles">
+            <li>User can make a new post</li>
+            <li>User can reply to other posts</li>
+            <li>User can view other user's replies</li>
+            <li>User can upvote and downvote content</li>
+            <li>User can report content</li>
+          </ul>
+          <p>
+            These test cases are relevant because they relate to the core
+            functionality of the user page, along with CRUD functionality. This
+            follows the precedent set by social media apps, such as Reddit and
+            Twitter, that we were attempting to follow when creating the Feed page,
+            in which users can create posts, reply to others, browse posts, upvote
+            or downvote content, and report unwanted content to flag for deletion.
+          </p>
+
+          <p><strong>2. Test Event page</strong></p>
+          <ul class="manifesto-principles">
+            <li>User can see upcoming events based on information in Supabase</li>
+            <li>
+              The search bar on the page should filter events based on their name
+              and host club's name
+            </li>
+            <li>
+              User is taken to the event's corresponding club's club page when the
+              event card is clicked
+            </li>
+            <li>
+              The club page should display the club's title, description, contact
+              information, and a link to WildcatSync
+            </li>
+            <li>The club page displays all the club's future events</li>
+          </ul>
+          <p>
+            This all corresponds to the core functionality of our events and clubs
+            pages — pages where you can browse events and view club information
+            respectively. Creating new clubs or events is not listed because, in the
+            future, our app would ideally pull all club and event data from
+            WildcatSync, and we currently only have placeholder data. These test
+            cases emphasize the basic UI/UX enhancements emphasized by our customers.
+          </p>
+          <figure class="manifesto-figure">
+            <img
+              src="images/student-hub-blog/final-22-X87.png"
+              alt="Student Hub event page test case screenshot."
+            />
+            <figcaption>Event page test case — search, navigation, and club links.</figcaption>
+          </figure>
+
+          <p><strong>3. Test Discussion Board</strong></p>
+          <ul class="manifesto-principles">
+            <li>User can send posts to the discussion board</li>
+            <li>User can reply to threads</li>
+            <li>User can upvote and downvote other poster's threads</li>
+            <li>User can upvote and downvote other poster's comments</li>
+            <li>User cannot upvote or downvote their own posts/comments</li>
+          </ul>
+          <p>
+            Similar to the Feed page, these test cases emphasize the core
+            functionality of our discussion board page while simultaneously
+            emphasizing CRUD guidelines. In the future, our app will allow users to
+            delete their posts and report unwanted posts, following the "deletion"
+            portion of the CRUD guidelines.
+          </p>
+
+          <p><strong>4. Test Resource Sharing page's functionality</strong></p>
+          <ul class="manifesto-principles">
+            <li>User can upload a PDF, Word document, or PowerPoint to the database</li>
+            <li>User can view resources fetched from the database</li>
+            <li>User can download other user's files</li>
+            <li>User can report other user's files</li>
+            <li>Users can delete their files from the database</li>
+          </ul>
+          <p>
+            The resource sharing page's functionality demands that a user can
+            upload, view, download, and report other users' content. We specify PDF,
+            Word document, and PowerPoint to keep resources as on-topic and relevant
+            to academics as possible, as these are the most common file formats a
+            student would require for readings, projects, or syllabi. Reporting in
+            particular is important to ensure all content is safe, ethical, and
+            follows the guidelines stipulated by the honor code. Ensuring that
+            resources can be downloaded, uploaded, and deleted ensures compliance with
+            CRUD guidelines.
+          </p>
+
+          <p><strong>5. Test the Course Review page's functionality</strong></p>
+          <ul class="manifesto-principles">
+            <li>User can rate courses on a scale of 1 to 5</li>
+            <li>User can post comments to explain ratings</li>
+            <li>
+              User can view all course ratings from other people along with their
+              corresponding course names and number of reviews
+            </li>
+            <li>User can edit and delete reviews</li>
+            <li>
+              User can see information regarding their post, such as date posted, the
+              course the post pertains to, and any other relevant information
+            </li>
+          </ul>
+          <p>
+            Again, to follow the core functionality of the course review page while
+            complying with CRUD guidelines, all of these test cases are relevant.
+            Students should be able to view, rate, and comment on courses, while being
+            able to view and comment on other users' ratings. Editing and deletion are
+            to comply with CRUD guidelines.
+          </p>
+        </div>
+
+        <div class="report-subsection">
+          <h4>Combinatorial testing factors</h4>
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th scope="col">Factor</th>
+                <th scope="col">Values</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OS</td>
+                <td>Windows, iOS, Linux, Android, iPhone</td>
+              </tr>
+              <tr>
+                <td>Browser</td>
+                <td>Chrome, Firefox, Microsoft Edge</td>
+              </tr>
+              <tr>
+                <td>Hardware</td>
+                <td>Laptop, Desktop, Samsung Smartphone, iPhone, Tablet</td>
+              </tr>
+              <tr>
+                <td>User type</td>
+                <td>
+                  Logged in as a student, logged in as an admin, logged in as a
+                  non-student
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>9. Project management</h3>
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Change description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>March 5, 2025</td>
+              <td>Removed Professor rating system</td>
+            </tr>
+            <tr>
+              <td>March 10, 2025</td>
+              <td>Added anonymous community discussion under course reviews</td>
+            </tr>
+            <tr>
+              <td>March 12, 2025</td>
+              <td>Adjusted moderation system</td>
+            </tr>
+            <tr>
+              <td>March 15, 2025</td>
+              <td>Developed a complete UI prototype on Figma</td>
+            </tr>
+            <tr>
+              <td>March 28, 2025</td>
+              <td>
+                Added card + list view toggle and resource preview to Resources page
+              </td>
+            </tr>
+            <tr>
+              <td>March 30, 2025</td>
+              <td>Enabled search functionality across key pages (Courses, Feed, Resources)</td>
+            </tr>
+            <tr>
+              <td>April 2, 2025</td>
+              <td>Developed basic structure for Club pages</td>
+            </tr>
+            <tr>
+              <td>April 15, 2025</td>
+              <td>
+                Added post details page and replies, enabled only one review per
+                student per course
+              </td>
+            </tr>
+            <tr>
+              <td>April 18, 2025</td>
+              <td>
+                Developed edit and delete course reviews functionality; developed the
+                clubs page
+              </td>
+            </tr>
+            <tr>
+              <td>April 22, 2025</td>
+              <td>
+                Added top posts of the week and reporting functionality for both posts
+                and replies
+              </td>
+            </tr>
+            <tr>
+              <td>April 23, 2025</td>
+              <td>Added usernames and dates for course reviews</td>
+            </tr>
+            <tr>
+              <td>April 24, 2025</td>
+              <td>Implemented the basic functionality for the thread page</td>
+            </tr>
+            <tr>
+              <td>April 28, 2025</td>
+              <td>
+                Integration of backend to multiview setup (card/list view) and
+                testing; enhancement of upload page on Resources Tab and integration
+                of toast functionality
+              </td>
+            </tr>
+            <tr>
+              <td>April 29, 2025</td>
+              <td>
+                Added upvoting, sorting and search functionality in the events page
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="manifesto-section">
+        <h3>10. Sprint review and retrospective</h3>
+
+        <div class="report-subsection">
+          <h4>Sprint review — April 20, 2025</h4>
+          <p>
+            <strong>Attendees:</strong> Team — Chanelle Hirwa, Kwasi Buansi, Pacis
+            Nkubito, Felipe Castellanos. Customer representatives — Maria Fajardo,
+            Aileen Kavishe, Branton Mogeni.
+          </p>
+          <p><strong>Goals and user stories presented:</strong></p>
+          <ul class="manifesto-principles">
+            <li>
+              Backend integration with Supabase for file uploads and metadata storage,
+              with automatic file type and uploader detection
+            </li>
+            <li>
+              Fully functional club pages displaying future events, club contact
+              modals, links to WildcatSync, and a discussion board with posting
+              guidelines and anonymous posting options
+            </li>
+            <li>
+              Adding "Top Posts of the Week" to the sidebar, and reporting
+              functionality for posts and replies
+            </li>
+            <li>
+              Searchable modal to find courses by name/code, create/edit/delete course
+              reviews with input validation and real-time updates
+            </li>
+          </ul>
+        </div>
+
+        <div class="report-subsection">
+          <h4>Sprint review — April 27, 2025</h4>
+          <p>
+            <strong>Attendees:</strong> Team — Chanelle Hirwa, Kwasi Buansi, Pacis
+            Nkubito, Felipe Castellanos. Customer representatives — Yumna Ahmed,
+            Aileen Kavishe, Branton Mogeni.
+          </p>
+          <p><strong>Customer feedback:</strong></p>
+          <ul class="manifesto-principles">
+            <li>
+              Customers liked the new level of backend integration, especially how
+              resource uploads now auto-update without needing manual refresh
+            </li>
+            <li>
+              Customers found the club discussion boards a strong addition for
+              improving student engagement
+            </li>
+            <li>
+              Customers appreciated the reporting system for keeping the feed safe and
+              the ability to view full post threads with replies
+            </li>
+          </ul>
+          <p><strong>Suggested improvements:</strong></p>
+          <ul class="manifesto-principles">
+            <li>
+              Add search and sorting capabilities to the club discussion boards (e.g.,
+              sort by upvotes or number of replies)
+            </li>
+            <li>
+              Expand moderator tools to manage reported posts and replies efficiently
+            </li>
+          </ul>
+        </div>
+
+        <div class="report-subsection">
+          <h4>Team roles</h4>
+          <ul class="manifesto-principles">
+            <li><strong>Product Owner:</strong> Kwasi Buansi</li>
+            <li><strong>Scrum Master:</strong> Chanelle Hirwa</li>
+            <li>
+              <strong>Developers:</strong> Felipe Castellanos, Pacis Nkubito, Kwasi
+              Buansi, Chanelle Hirwa
+            </li>
+          </ul>
+        </div>
+
+        <div class="report-subsection">
+          <h4>Contribution by each team member</h4>
+          <p>
+            <strong>Felipe Castellanos</strong> continued development of the Resources
+            page by connecting it to our Supabase backend. He created a dedicated
+            table to store file metadata and set up a storage bucket for actual file
+            uploads. Felipe made sure the front end and back end synced properly and
+            added real-time updates for uploads. He also improved the system to
+            automatically detect the file type and uploader information, removing the
+            need for manual input during upload.
+          </p>
+          <p>
+            <strong>Kwasi Buansi</strong> completed the Clubs page, which now displays
+            future events hosted by each club along with a modal for contact
+            information. He added a search bar for the events page and created a
+            discussion board for clubs where users can post, reply, and upvote or
+            downvote posts. When making a new post, users are shown posting guidelines
+            and must agree before proceeding. Users can also choose to post
+            anonymously. Although event registration was out of scope for this sprint,
+            Kwasi linked clubs to WildcatSync and maintained UI consistency by
+            allowing downvotes. Looking ahead, he suggested improvements like sorting
+            and search functionality for the discussion board and UI refinements for
+            the Clubs page.
+          </p>
+          <p>
+            <strong>Pacis Nkubito</strong> focused on enhancing the feed by adding a
+            "Top Posts of the Week" section to the right sidebar, which displays the
+            most upvoted posts. He also built a detailed view page for individual
+            posts where users can view replies (similar to platforms like X or
+            Reddit). Additionally, he implemented a reporting feature allowing users
+            to report posts and replies; reported content is hidden from the reporter
+            and stored in the database for review. Pacis encountered challenges
+            integrating Davidson's Single Sign-On (SSO) due to needing Davidson T&amp;I
+            coordination, which has been moved to the next sprint, along with
+            building a moderator dashboard for managing submitted reports.
+          </p>
+          <p>
+            <strong>Chanelle Hirwa</strong> developed a modal with a dynamic search bar
+            allowing users to find courses by name or code and submit course reviews.
+            Each review now displays the username, post date, star rating (1–5), and
+            comment. Chanelle added functionality for users to edit or delete their
+            existing reviews and included input validation to prevent invalid ratings.
+            An "Invalid rating" message displays for wrong inputs, and submission is
+            disabled until corrected.
+          </p>
+        </div>
+
+        <div class="report-subsection">
+          <h4>Challenges</h4>
+          <p>
+            While we successfully implemented the main features of our app, we faced
+            some unexpected challenges along the way. In retrospect, we could have
+            communicated more consistently regarding our issues and the expectations
+            of our app. Sometimes it was not entirely clear throughout the team what
+            exactly our implementation should look like, and there are some
+            inconsistencies in the UI and terminologies we used.
+          </p>
+          <p>
+            A new challenge that emerged this sprint was the increased complexity in
+            backend integration, especially around syncing Supabase data with the
+            frontend in real time. Additionally, external dependencies, such as needing
+            Davidson's T&amp;I support for SSO integration, slowed progress in certain
+            areas.
+          </p>
+          <p>
+            Another difficulty was maintaining UI consistency across different
+            features, since multiple pages were worked on in parallel. Going forward,
+            early communication about external needs could help make development faster
+            for future sprints. We also intend to further integrate all of the app's
+            features to ensure they use a consistent UI and terminology.
+          </p>
+        </div>
       </section>
     </article>
 

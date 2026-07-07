@@ -552,7 +552,7 @@ body {
 
 .site-nav-articles::before {
   content: "Articles";
-  font-size: 0.62rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -578,7 +578,7 @@ body {
 .site-nav-cta {
   padding: 0.42rem 0.85rem;
   border-radius: 999px;
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   font-weight: 600;
   text-decoration: none;
   color: var(--indigo-dark);
@@ -606,7 +606,7 @@ body {
   display: inline-block;
   padding: 0.45rem 0.85rem;
   border-radius: 999px;
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   text-decoration: none;
@@ -1198,7 +1198,7 @@ img.w3-hover-opacity {
   }
 
   .site-nav a {
-    font-size: 0.75rem;
+    font-size: 0.84rem;
     padding: 0.4rem 0.65rem;
   }
 
